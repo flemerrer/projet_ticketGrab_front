@@ -1,8 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 import {Route, Routes} from "react-router-dom";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Link} from "@mui/material";
+import ListUsers from "./components/ListUsers";
+import Footer from "./components/Footer";
+import SignIn from "./components/SignIn";
 
 export default function App() {
   return (
@@ -10,12 +13,18 @@ export default function App() {
     <div className="App">
 
         <Routes>
+            <Route path='/listusers' element={<ListUsers/>}></Route>
+            <Route path='/signin' element={<SignIn/>}></Route>
             <Route path='/' element={<Home/>}>
+                {/*<Route path='/auth/login' element={<Login/>}></Route>*/}
                 {/*<Route path='login' element={<Register/>}/>*/}
                 {/*<Route path='login' element={<Login/>}/>*/}
             </Route>
             <Route path='/*' element={<NoMatch/>}/>
         </Routes>
+        <div className="App">
+            <Footer/>
+        </div>
 
     </div>
 );
@@ -37,6 +46,33 @@ function Home(){
             </header>
         </>
     )
+
+
+    // const [users, setUsers] = useState([]);
+    //
+    // useEffect(() => {
+    //     fetch('http://localhost:8080/api/allusers')
+    //         .then(res => res.json())
+    //         .then(users=>
+    //             setUsers(users));
+    //     console.table(users);
+    // }, []);
+    //
+    // return (
+    //     <section id="utilisateurs">
+    //         {/*{search}*/}
+    //         <h1 className="m-3">Liste des Users</h1>
+    //         <ul className="list-group m-3">
+    //             {users.map (u => (
+    //                 <li className="list-group-item d-flex align-tiems-center">
+    //                     {u.firstName} {u.lastName}
+    //                     <button className="btn btn-sm ms-auto btn-outline-success">&#x2713;</button>
+    //                 </li>)
+    //             )}
+    //         </ul>
+    //     </section>
+    // );
+
 }
 
 function NoMatch() {
