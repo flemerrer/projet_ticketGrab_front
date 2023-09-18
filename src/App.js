@@ -10,6 +10,8 @@ import SignUp from "./components/SignUp";
 import {Route, Routes} from 'react-router-dom';
 import EventList from "./components/EventList";
 import HomePage from "./components/Homepage";
+import Tickets from "./components/Tickets";
+import AddTicket from "./components/AddTicket";
 
 export default function App() {
     return (
@@ -24,6 +26,8 @@ export default function App() {
                     <Route path='events' element={<EventList/>}/>
                     <Route path='listusers' element={<ListUsers/>}/>
                     <Route path='signin' element={<SignIn/>}/>
+                    <Route path='/ticket/add' element={<AddTicket />} />
+                    <Route path='/ticket' element={<Tickets/>}/>
                     <Route path='register' element={<SignUp/>}/>
                     <Route path='userprofile' element={<UserProfile/>}/>
                 </Route>
@@ -60,6 +64,9 @@ export default function App() {
 //         </ul>
 //     </section>
 // );
+
+
+
 
 function NoMatch() {
     return (
