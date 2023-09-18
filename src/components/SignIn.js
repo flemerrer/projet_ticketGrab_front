@@ -12,6 +12,8 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import ListUsers from "./ListUsers";
+import axios from "axios";
 
 function Copyright(props) {
     return (
@@ -38,6 +40,15 @@ export default function SignIn() {
             email: data.get('email'),
             password: data.get('password'),
         });
+
+        let newTask = {
+            email: data.get('email'),
+            password: data.get('password'),
+        };
+
+        axios.post('http://localhost:8080/auth/login', newTask)
+            .then(newTask  => console.log(newTask))
+            .catch(error => console.error(error));
     };
 
     return (
