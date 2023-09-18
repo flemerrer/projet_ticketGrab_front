@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+
 import './App.css';
 import {Route, Routes} from "react-router-dom";
 import React from "react";
 import {Link} from "@mui/material";
+import Tickets from "./components/Tickets";
+import AddTicket from "./components/AddTicket";
 
-export default function App() {
+const App = () => {
   return (
-
-    <div className="App">
-
+      <>
+          <h1>Ticket App</h1>
+          <nav>
+              <ul>
+                  <li><Link href='/' >Home</Link></li>
+                  <li><Link href='/ticket'>Tickets</Link></li>
+                  <li><Link href='/ticket/add'>Add Ticket</Link></li>
+              </ul>
+          </nav>
         <Routes>
-            <Route path='/' element={<Home/>}>
-                {/*<Route path='login' element={<Register/>}/>*/}
-                {/*<Route path='login' element={<Login/>}/>*/}
-            </Route>
+            <Route path='/' element={<Home />} />
+            <Route path='/ticket/add' element={<AddTicket />} />
+            <Route path='/ticket' element={<Tickets/>}/>
             <Route path='/*' element={<NoMatch/>}/>
         </Routes>
-
-    </div>
+      </>
 );
 }
 
@@ -25,20 +31,11 @@ function Home(){
     return(
         <>
             <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
+
             </header>
         </>
     )
 }
-
 function NoMatch() {
     return (
         <div>
@@ -49,3 +46,5 @@ function NoMatch() {
         </div>
     );
 }
+
+export default App;
