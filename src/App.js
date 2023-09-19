@@ -1,6 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-import {Route, Routes} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import {Link} from "@mui/material";
 import ListUsers from "./components/ListUsers";
@@ -9,8 +8,6 @@ import SignIn from "./components/SignIn";
 import UserProfile from "./components/UserProfile";
 import SignUp from "./components/SignUp";
 import {Outlet, Route, Routes} from 'react-router-dom';
-import React from 'react';
-import {Link} from '@mui/material';
 import EventList from "./components/EventList";
 
 export default function App() {
