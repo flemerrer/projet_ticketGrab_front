@@ -4,11 +4,15 @@ import {Outlet, Route, Routes} from 'react-router-dom';
 import React from 'react';
 import {Link} from '@mui/material';
 import EventList from "./components/EventList";
+import Footer from "./components/Footer";
+import NavBar from "./components/NavBar";
 
 export default function App() {
   return (
 
     <div className='App'>
+
+        <NavBar />
 
         <Routes>
             <Route path='/'>
@@ -19,6 +23,8 @@ export default function App() {
             </Route>
             <Route path='/*' element={<NoMatch/>}/>
         </Routes>
+
+        <Footer />
 
     </div>
 );
