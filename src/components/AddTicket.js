@@ -37,9 +37,11 @@ export default function AddTicket() {
 
                 <div><TextField id="txtName" required name="event" label="Event Name" type="text" margin="dense" fullWidth="true"></TextField></div>
 
-                <div> <TextField id="txtName" required name="img" label="img link" type="link" margin="dense" fullWidth="true"></TextField></div>
+                <div> <TextField id="txtName" required name="img" label="Img link" type="link" margin="dense" fullWidth="true"></TextField></div>
 
-                <div> <Button type="submit" size="small" variant="contained"> Add  </Button>  </div>
+                <div> <TextField id="txtName" required name="price" label="Price  (€)" type="number" margin="dense" fullWidth="true"></TextField></div>
+
+                <div><Button type="submit" size="small" variant="contained"> Add  </Button></div>
             </Box>
 
         </Container>
