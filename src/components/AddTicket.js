@@ -32,22 +32,18 @@ export default function AddTicket() {
             <h2>Add Tickets</h2>
         <Container maxWidth="xs">
             <Box component='form' onSubmit={handleSubmit} noValidate
-                 sx={{ p: 5, border: '5px solid', width :300, height: 300, backgroundColor: 'white'}}>
+                 sx={{ p: 5, border: '5px solid', width :300, height:400, backgroundColor: 'white'}}>
                 <div><TextField id="txtName" required name="name" label="Ticket Name" type="text" margin="dense" fullWidth="true"></TextField></div>
 
                 <div><TextField id="txtName" required name="event" label="Event Name" type="text" margin="dense" fullWidth="true"></TextField></div>
 
-<<<<<<< HEAD
                 <div> <TextField id="txtName" required name="img" label="Img link" type="link" margin="dense" fullWidth="true"></TextField></div>
 
                 <div> <TextField id="txtName" required name="price" label="Price  (€)" type="number" margin="dense" fullWidth="true"></TextField></div>
 
-                <div><Button type="submit" size="small" variant="contained"> Add  </Button></div>
-=======
                 <div> <TextField id="txtName" required name="img" label="img link" type="link" margin="dense" fullWidth="true"></TextField></div>
 
                 <div> <Button type="submit" size="small" variant="contained"> Add  </Button>  </div>
->>>>>>> 91f959c (mise a jour form Add ticket et Affichage tickets)
             </Box>
 
         </Container>
