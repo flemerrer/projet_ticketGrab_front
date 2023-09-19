@@ -44,6 +44,73 @@ export default function EventList() {
             });
     }
 
+    return (
+        <>
+            <h1>Parcourir les événements</h1>
+            <h3>Trouve des concerts près de chez toi</h3>
+            <Grid display="flex" justifyContent="center" alignItems="center" sx={{listStyleType: 'none'}}>
+                <FilterButton/>
+                <FilterButton/>
+            </Grid>
+            <Grid sx={{listStyleType: 'none'}}>
+                <Grid display="flex" justifyContent="center" alignItems="center" sx={{mb: 1.5}}>
+                    <Card sx={{flexGrow: 1, maxWidth: 500}}>
+                        <CardContent>
+                            <Typography sx={{fontSize: 14}} color='text.danger'>
+                                Date
+                            </Typography>
+                            <Typography variant='h5' component='div'>
+                                Name
+                            </Typography>
+                            <Typography sx={{mb: .5}} color='text.secondary'>
+                                City
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </Grid>
+                <Grid display="flex" justifyContent="center" alignItems="center" sx={{mb: 1.5}}>
+                    <Card sx={{flexGrow: 1, maxWidth: 500}}>
+                        <CardContent>
+                            <Typography sx={{fontSize: 14}} color='text.danger'>
+                                Date
+                            </Typography>
+                            <Typography variant='h5' component='div'>
+                                Name
+                            </Typography>
+                            <Typography sx={{mb: .5}} color='text.secondary'>
+                                City
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </Grid>
+                {events.slice(0, start + 5).map(event =>
+                    (<Grid display="flex" justifyContent="center" alignItems="center" sx={{mb: 1.5}}>
+                        <li><Event event={event}/></li>
+                    </Grid>))}
+            </Grid>
+            <LoadMore/>
+        </>
+    )
+
+    function Event({event}) {
+
+        return (
+            <Card>
+                <CardContent>
+                    <Typography sx={{fontSize: 14}} color='text.danger'>
+                        {event.date}
+                    </Typography>
+                    <Typography variant='h5' component='div'>
+                        {event.name}
+                    </Typography>
+                    <Typography sx={{mb: .5}} color='text.secondary'>
+                        {event.city}
+                    </Typography>
+                </CardContent>
+            </Card>
+        )
+    }
+
     function LoadMore() {
         if (start <= events.length) {
             return (
@@ -54,40 +121,5 @@ export default function EventList() {
             return <></>;
         }
     }
-
-    return (
-        <>
-            <h1>Parcourir les événements</h1>
-            <h3>Trouve des concerts près de chez toi</h3>
-            <FilterButton/>
-            <Grid sx={{listStyleType: 'none'}}>
-                {events.slice(0, start + 5).map(event =>
-                    (<Grid display="flex" justifyContent="center" alignItems="center" sx={{mb: 1.5}}>
-                        <li><Event event={event}/></li>
-                    </Grid>))}
-            </Grid>
-            <LoadMore/>
-        </>
-    )
-
-}
-
-function Event({event}) {
-
-    return (
-        <Card sx={{minWidth: 500, maxWidth: 800}}>
-            <CardContent>
-                <Typography sx={{fontSize: 14}} color='text.danger'>
-                    {event.date}
-                </Typography>
-                <Typography variant='h5' component='div'>
-                    {event.name}
-                </Typography>
-                <Typography sx={{mb: .5}} color='text.secondary'>
-                    {event.city}
-                </Typography>
-            </CardContent>
-        </Card>
-    )
 
 }

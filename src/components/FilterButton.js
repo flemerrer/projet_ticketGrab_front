@@ -3,7 +3,7 @@ import { styled, alpha } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-// import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 export function FilterButton() {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -73,7 +73,8 @@ export function FilterButton() {
                 variant="contained"
                 disableElevation
                 onClick={handleClick}
-                // endIcon={<KeyboardArrowDownIcon />}
+                endIcon={<KeyboardArrowDownIcon />}
+                sx={{m:2}}
             >
                 Options
             </Button>
