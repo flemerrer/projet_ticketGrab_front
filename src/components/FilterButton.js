@@ -3,7 +3,6 @@ import { styled, alpha } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import Divider from '@mui/material/Divider';
 // import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 export function FilterButton() {
@@ -16,10 +15,12 @@ export function FilterButton() {
         setAnchorEl(null);
     };
 
+/*
     const click = (param) => {
         handleClose;
         fetchParam(param);
     }
+    */
 
     const StyledMenu = styled((props) => (
         <Menu
@@ -85,7 +86,7 @@ export function FilterButton() {
                 open={open}
                 onClose={handleClose}
             >
-                <MenuItem onClick={click(param)} disableRipple>
+                <MenuItem onClick={handleClose} disableRipple>
                     Entry 1
                 </MenuItem>
                 <MenuItem onClick={handleClose} disableRipple>
