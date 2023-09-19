@@ -7,7 +7,7 @@ import {
     CardMedia,
     Chip,
     Container,
-    Grid,
+    Grid, IconButton,
     Stack,
     Typography
 } from "@mui/material";
@@ -45,11 +45,12 @@ export default function Tickets() {
                         { tickets.map((ticket) => (
 
                                 <Grid item key={ticket.id}>
-                                    <Card sx={{maxWidth:400}}>
+                                    <Card sx={{maxWidth:260}}>
                                         <CardMedia
+                                            component="img"
+                                            height="250"
                                             sx={{height: 250, width: 260}}
                                             image={ticket.img}
-                                            title="green iguana"
                                         />
                                         <CardContent>
                                             <Typography variant="body2" color="text.secondary">
@@ -61,15 +62,10 @@ export default function Tickets() {
                                             <Typography gutterBottom variant="h5" component="div">
                                                 {ticket.event}
                                             </Typography>
-
-                                            <Stack direction="row" spacing={1}>
-                                                <Chip label={ticket.completed ? 'Available' : 'Not Available'} sx={{margin: 4}}
-                                                      color={ticket.completed ? 'success' : 'error'}/>
-                                            </Stack>
                                         </CardContent>
                                         <CardActions>
-                                            <Button size="small">Add to Cart</Button>
-                                            <Button size="small" onClick={() => deleteTicket(ticket.id)}>Delete</Button>
+                                            <Button size="small" variant="contained">Add to Cart</Button>
+                                            <Button size="small"  variant="outlined" color="error" onClick={() => deleteTicket(ticket.id)}>Delete</Button>
                                         </CardActions>
                                     </Card>
                                 </Grid>
