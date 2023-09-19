@@ -8,29 +8,28 @@ import Footer from "./components/Footer";
 import SignIn from "./components/SignIn";
 import UserProfile from "./components/UserProfile";
 import SignUp from "./components/SignUp";
+import {Outlet, Route, Routes} from 'react-router-dom';
+import React from 'react';
+import {Link} from '@mui/material';
+import EventList from "./components/EventList";
 
 export default function App() {
   return (
-
-    <div className="App">
-
+    <div className='App'>
         <Routes>
-            <Route path='/listusers' element={<ListUsers/>}></Route>
-            <Route path='/signin' element={<SignIn/>}></Route>
-            <Route path='/register' element={<SignUp/>}></Route>
-            <Route path='/userprofile' element={<UserProfile/>}></Route>
-
-            <Route path='/' element={<Home/>}>
-                {/*<Route path='/auth/login' element={<Login/>}></Route>*/}
-                {/*<Route path='login' element={<Register/>}/>*/}
-                {/*<Route path='login' element={<Login/>}/>*/}
+            <Route path='/'>
+                <Route path='home' element={<Home/>} />
+                <Route path='/listusers' element={<ListUsers/>}/>
+                <Route path='/signin' element={<SignIn/>}/>
+                <Route path='/register' element={<SignUp/>}/>
+                <Route path='/userprofile' element={<UserProfile/>}/>
+                <Route path='eventlist' element={<EventList />} />
             </Route>
             <Route path='/*' element={<NoMatch/>}/>
         </Routes>
         <div className="App">
             <Footer/>
         </div>
-
     </div>
 );
 }
@@ -38,13 +37,13 @@ export default function App() {
 function Home(){
     return(
         <>
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
+            <header className='App-header'>
+                <img src={logo} className='App-logo' alt='logo' />
                 <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    className='App-link'
+                    href='https://reactjs.org'
+                    target='_blank'
+                    rel='noopener noreferrer'
                 >
                     Learn React
                 </a>
@@ -78,6 +77,16 @@ function Home(){
     //     </section>
     // );
 
+}
+
+
+function Layout() {
+    return (
+        <div>
+
+            {/*<Outlet />*/}
+        </div>
+    )
 }
 
 function NoMatch() {
