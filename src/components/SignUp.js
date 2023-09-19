@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from "axios";
+import {NavLink, redirect, useNavigate} from "react-router-dom";
 
 function Copyright(props) {
     return (
@@ -32,6 +33,7 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignUp() {
+    const navigate = useNavigate();
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -51,6 +53,8 @@ export default function SignUp() {
         axios.post('http://localhost:8080/auth/register', newTask)
             .then(newTask  => console.log(newTask))
             .catch(error => console.error(error));
+
+        return navigate("/signin");
     };
 
     return (
@@ -132,9 +136,9 @@ export default function SignUp() {
                         </Button>
                         <Grid container justifyContent="flex-end">
                             <Grid item>
-                                <Link href="#" variant="body2">
+                                <NavLink to="/signin" variant="body2">
                                     Already have an account? Sign in
-                                </Link>
+                                </NavLink>
                             </Grid>
                         </Grid>
                     </Box>

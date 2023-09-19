@@ -14,6 +14,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ListUsers from "./ListUsers";
 import axios from "axios";
+import {redirect, useNavigate} from "react-router-dom";
 
 function Copyright(props) {
     return (
@@ -33,6 +34,8 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignIn() {
+    const navigate = useNavigate();
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -49,6 +52,9 @@ export default function SignIn() {
         axios.post('http://localhost:8080/auth/login', newTask)
             .then(newTask  => console.log(newTask))
             .catch(error => console.error(error));
+
+        return navigate("/userprofile");
+
     };
 
     return (

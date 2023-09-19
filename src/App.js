@@ -6,6 +6,7 @@ import {Link} from "@mui/material";
 import ListUsers from "./components/ListUsers";
 import Footer from "./components/Footer";
 import SignIn from "./components/SignIn";
+import UserProfile from "./components/UserProfile";
 import SignUp from "./components/SignUp";
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
             <Route path='/listusers' element={<ListUsers/>}></Route>
             <Route path='/signin' element={<SignIn/>}></Route>
             <Route path='/register' element={<SignUp/>}></Route>
+            <Route path='/userprofile' element={<UserProfile/>}></Route>
 
             <Route path='/' element={<Home/>}>
                 {/*<Route path='/auth/login' element={<Login/>}></Route>*/}
