@@ -55,6 +55,7 @@ export default function SignIn() {
             })
             .then(function (token) {
                 localStorage.setItem('token',token);
+                console.log(localStorage);
                 navigate("/userprofile");
             })
     .catch(function (error) {

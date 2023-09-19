@@ -9,6 +9,7 @@ import UserProfile from "./components/UserProfile";
 import SignUp from "./components/SignUp";
 import {Outlet, Route, Routes} from 'react-router-dom';
 import EventList from "./components/EventList";
+import Signout from "./components/Signout";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
                 <Route path='home' element={<Home/>} />
                 <Route path='/listusers' element={<ListUsers/>}/>
                 <Route path='/signin' element={<SignIn/>}/>
+                <Route path='/signout' element={<Signout/>}/>
                 <Route path='/register' element={<SignUp/>}/>
                 <Route path='/userprofile' element={<UserProfile/>}/>
                 <Route path='eventlist' element={<EventList />} />
