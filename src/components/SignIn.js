@@ -44,17 +44,22 @@ export default function SignIn() {
             password: data.get('password'),
         });
 
-        let newTask = {
+        let loginData = {
             email: data.get('email'),
             password: data.get('password'),
         };
 
-        axios.post('http://localhost:8080/auth/login', newTask)
-            .then(newTask  => console.log(newTask))
-            .catch(error => console.error(error));
-
-        return navigate("/userprofile");
-
+        axios.post('http://localhost:8080/auth/login', loginData)
+            .then(function (response) {
+                console.log(response);
+            })
+            .then(function (response) {
+                localStorage.setItem('token', JSON.stringify(response));
+                navigate("/userprofile");
+            })
+    .catch(function (error) {
+                console.log(error);
+            });
     };
 
     return (

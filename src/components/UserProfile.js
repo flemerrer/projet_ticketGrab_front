@@ -1,15 +1,21 @@
 import * as React from 'react';
 import {useEffect, useState} from "react";
+import {useNavigate, useParams} from "react-router-dom";
 
 export default function ListUsers() {
+    const navigate = useNavigate();
 
     const [user, setUser] = useState([]);
     const [userid, setUserId]= useState([]);
-    // setUserId({user.id});
+
+    const {taskId} = useParams();
 
     useEffect(() => {
-        let id =18;
-        fetch('http://localhost:8080/api/allusers/{id}')
+        // const userid = 17;
+        fetch('http://localhost:8080/api/allusers', {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer' + localStorage.getItem("token")
+        })
             .then(res => res.data)
             .then(data=>
                 setUser(data));
@@ -24,8 +30,6 @@ export default function ListUsers() {
                 <p>{user.lastName}</p>
                 <p>{user.email}</p>
                 <p>{user.password}</p>
-                <p>{user.soldTicketsNumber}</p>
-                <p>{user.admin}</p>
             </div>
         </>
     );
