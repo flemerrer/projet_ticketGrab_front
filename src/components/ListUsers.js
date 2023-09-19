@@ -7,7 +7,12 @@ export default function ListUsers() {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:8080/api/allusers')
+        fetch('http://localhost:8080/api/allusers', {
+            headers:{
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer' + localStorage.getItem('token'),
+            },
+        })
             .then(res => res.json())
             .then(users=>
                 setUsers(users));
