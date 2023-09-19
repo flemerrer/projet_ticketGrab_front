@@ -8,7 +8,6 @@ import SignIn from "./components/SignIn";
 import UserProfile from "./components/UserProfile";
 import SignUp from "./components/SignUp";
 import {Outlet, Route, Routes} from 'react-router-dom';
-import {Link} from '@mui/material';
 import EventList from "./components/EventList";
 
 export default function App() {

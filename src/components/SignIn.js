@@ -51,10 +51,10 @@ export default function SignIn() {
 
         axios.post('http://localhost:8080/auth/login', loginData)
             .then(function (response) {
-                console.log(response);
+                return response.data;
             })
-            .then(function (response) {
-                localStorage.setItem('token', JSON.stringify(response));
+            .then(function (token) {
+                localStorage.setItem('token',token);
                 navigate("/userprofile");
             })
     .catch(function (error) {
