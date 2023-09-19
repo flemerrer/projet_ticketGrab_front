@@ -14,7 +14,8 @@ export default function AddTicket() {
 
         let newTicket = {
             'name': data.get('name'),
-            'completed': false
+            'event': data.get('event'),
+            'img': data.get('img'),
         };
 
         axios.post('http://localhost:4000/tickets', newTicket)
@@ -29,17 +30,18 @@ export default function AddTicket() {
         </header>
         <div className="App-headerAT">
             <h2>Add Tickets</h2>
-        <Container>
+        <Container maxWidth="xs">
             <Box component='form' onSubmit={handleSubmit} noValidate
                  sx={{ p: 5, border: '5px solid', width :300, height: 300, backgroundColor: 'white'}}>
-                <div><TextField id="txtName" required name="name" label="Ticket Name" type="text"></TextField></div>
+                <div><TextField id="txtName" required name="name" label="Ticket Name" type="text" margin="dense" fullWidth="true"></TextField></div>
 
-                <div><TextField id="txtName" required name="name" label="Event Name" type="text"></TextField></div>
+                <div><TextField id="txtName" required name="event" label="Event Name" type="text" margin="dense" fullWidth="true"></TextField></div>
 
-                <div> <TextField id="txtName" required name="name" label="img link" type="text"></TextField></div>
+                <div> <TextField id="txtName" required name="img" label="img link" type="link" margin="dense" fullWidth="true"></TextField></div>
 
-                <div> <Button type="submit">Add</Button></div>
+                <div> <Button type="submit" size="small" variant="contained"> Add  </Button>  </div>
             </Box>
+
         </Container>
 
         </div>
