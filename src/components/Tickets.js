@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+
 import {
     Button,
     Card,
@@ -23,7 +24,6 @@ export default function Tickets() {
             .then(tickets => setTickets(tickets))
     }, []);
 
-
     function deleteTicket(ticketId) {
         axios.delete(`http://localhost:4000/tickets/${ticketId}`)
             .then(response => {
@@ -33,15 +33,11 @@ export default function Tickets() {
 
     return (
         <>
-            <body>
-            <header>
+            <body className="App-headerT">
+                <h4>Tickets disponibles</h4>
 
-            </header>
-            <div className="App-headerT">
-                <h2>Tickets</h2>
                 <Container sx={{py: 8}} >
                     <Grid container spacing={4}>
-
                         { tickets.map((ticket) => (
 
                                 <Grid item key={ticket.id}>
@@ -74,15 +70,8 @@ export default function Tickets() {
                     </Grid>
                 </Container>
 
-            </div>
             <footer></footer>
             </body>
-
-
-
-
-
-
         </>
     );
 }
