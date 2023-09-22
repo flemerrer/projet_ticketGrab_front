@@ -14,6 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Searchbar from "./SearchBar";
 
+
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function NavBar() {
@@ -91,7 +92,7 @@ function NavBar() {
                             }}
                         >
                             <MenuItem onClick={handleCloseNavMenu}>
-                                <Typography textAlign="center">Mes tickets</Typography>
+                                <Typography textAlign="center" >Mes tickets</Typography>
                             </MenuItem>
                             <MenuItem onClick={handleCloseNavMenu}>
                                 <Typography textAlign="center">Mes annonces</Typography>
@@ -108,6 +109,7 @@ function NavBar() {
                         <Button
                             onClick={handleCloseNavMenu}
                             sx={{ my: 2, color: 'white', display: 'block' }}
+                            href={'/mestickets'}
                         >
                             Mes tickets
                         </Button>
@@ -120,6 +122,7 @@ function NavBar() {
                         <Button
                             onClick={handleCloseNavMenu}
                             sx={{ my: 2, color: 'white', display: 'block' }}
+                            href={'/ticket/add'}
                         >
                             Vendre un ticket
                         </Button>

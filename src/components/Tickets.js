@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 import {
     Button,
@@ -13,6 +14,7 @@ import {
     Typography
 } from "@mui/material";
 import axios from "axios";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 export default function Tickets() {
 
@@ -33,9 +35,6 @@ export default function Tickets() {
 
     return (
         <>
-            <body className="App-headerT">
-                <h4>Tickets disponibles</h4>
-
                 <Container sx={{py: 8}} >
                     <Grid container spacing={4}>
                         { tickets.map((ticket) => (
@@ -52,16 +51,21 @@ export default function Tickets() {
                                             <Typography variant="body2" color="text.secondary">
                                                 {ticket.id}
                                             </Typography>
-                                            <Typography gutterBottom variant="h5" component="div">
+                                            <Typography gutterBottom variant="h7" component="div">
                                                 {ticket.name}
                                             </Typography>
-                                            <Typography gutterBottom variant="h5" component="div">
+                                            <Typography gutterBottom variant="h6" component="div" color="darkblue">
                                                 {ticket.event}
+                                            </Typography>
+                                            <Typography gutterBottom variant="h4" component="div" color="red">
+                                                {ticket.price} €
                                             </Typography>
                                         </CardContent>
                                         <CardActions>
-                                            <Button size="small" variant="contained">Add to Cart</Button>
-                                            <Button size="small"  variant="outlined" color="error" onClick={() => deleteTicket(ticket.id)}>Delete</Button>
+                                            <IconButton color="primary" aria-label="add to shopping cart">
+                                                <AddShoppingCartIcon />
+                                            </IconButton>
+                                            <Button size="small"  variant="outlined" startIcon={<DeleteIcon/>} color="error" onClick={() => deleteTicket(ticket.id)}>Delete</Button>
                                         </CardActions>
                                     </Card>
                                 </Grid>
@@ -69,9 +73,6 @@ export default function Tickets() {
                         )}
                     </Grid>
                 </Container>
-
-            <footer></footer>
-            </body>
         </>
     );
 }
