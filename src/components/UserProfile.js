@@ -5,26 +5,23 @@ import {useNavigate, useParams} from "react-router-dom";
 export default function ListUsers() {
     const [user, setUser] = useState([]);
 
-    // const navigate = useNavigate();
-    // const [userid, setUserId]= useState([]);
-    // const {taskId} = useParams();
-
-    // Access-Control-Allow-Origin header
-
-
     useEffect(() => {
-        // const userid = 17;
         fetch('http://localhost:8080/api/allusers', {
-            headers:{
-                'Content-Type': 'application/json',
-                Authorization: 'Bearer' + localStorage.getItem('token'),
-            },
-
+            method: 'GET',
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}` // Assuming you are using Bearer token authentication
+            }
         })
-            .then(res => res.json())
-            .then(user=>
-                setUser(user));
-        console.table(user);
+            .then(response => response.json())
+            .then(user => {
+                setUser(user);
+                console.table(user);
+                // Handle the response data here
+            })
+            .catch(error => {
+                console.error(error);
+                // Handle errors here
+            })
     }, []);
 
     return (
@@ -39,4 +36,4 @@ export default function ListUsers() {
             </div>))}
         </>
     );
-}
+    }
