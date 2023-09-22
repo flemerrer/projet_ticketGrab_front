@@ -10,6 +10,7 @@ import SignUp from "./components/SignUp";
 import {Outlet, Route, Routes} from 'react-router-dom';
 import EventList from "./components/EventList";
 import Signout from "./components/Signout";
+import {Link} from '@mui/material';
 import NavBar from "./components/NavBar";
 
 export default function App() {
@@ -35,6 +36,8 @@ export default function App() {
         <div className="App">
             <Footer/>
         </div>
+
+        <Footer />
 
         <Footer />
 
@@ -85,6 +88,16 @@ function Home(){
     //     </section>
     // );
 
+}
+
+
+function Layout() {
+    return (
+        <div>
+
+            {/*<Outlet />*/}
+        </div>
+    )
 }
 
 
