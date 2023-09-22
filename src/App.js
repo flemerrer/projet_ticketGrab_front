@@ -9,12 +9,8 @@ import UserProfile from "./components/UserProfile";
 import SignUp from "./components/SignUp";
 import {Outlet, Route, Routes} from 'react-router-dom';
 import EventList from "./components/EventList";
-<<<<<<< HEAD
 import Signout from "./components/Signout";
-=======
-import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
->>>>>>> 8ddc2c7 (navbar + footer + installed material icons)
 
 export default function App() {
   return (
