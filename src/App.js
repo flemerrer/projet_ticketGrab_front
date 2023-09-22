@@ -10,7 +10,6 @@ import SignUp from "./components/SignUp";
 import {Outlet, Route, Routes} from 'react-router-dom';
 import EventList from "./components/EventList";
 import Signout from "./components/Signout";
-import {Link} from '@mui/material';
 import NavBar from "./components/NavBar";
 
 export default function App() {
@@ -21,26 +20,20 @@ export default function App() {
         <NavBar />
 
         <Routes>
-            <Route path='/' element={<Home/>}>
+            {/*<Route path='/' element={<Home/>}>*/}
 
-                <Route path='eventlist' element={<EventList />} />
+            <Route path='eventlist' element={<EventList />} ></Route>
 
                 <Route path='/listusers' element={<ListUsers/>}></Route>
                 <Route path='/signin' element={<SignIn/>}></Route>
                 <Route path='/register' element={<SignUp/>}></Route>
                 <Route path='/userprofile' element={<UserProfile/>}></Route>
 
-            </Route>
-            <Route path='/*' element={<NoMatch/>}/>
+                <Route path='/*' element={<NoMatch/>}></Route>
         </Routes>
         <div className="App">
             <Footer/>
         </div>
-
-        <Footer />
-
-        <Footer />
-
     </div>
 );
 }
@@ -89,17 +82,6 @@ function Home(){
     // );
 
 }
-
-
-function Layout() {
-    return (
-        <div>
-
-            {/*<Outlet />*/}
-        </div>
-    )
-}
-
 
 function Layout() {
     return (
