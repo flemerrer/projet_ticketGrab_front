@@ -1,6 +1,19 @@
 import '../App.css';
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
+import {
+    Box,
+    Button,
+    Card,
+    CardActions,
+    CardContent,
+    CardMedia,
+    Chip,
+    Container,
+    Grid,
+    Stack, TextField,
+    Typography
+} from "@mui/material";
 
 export default function ListUsers() {
 
@@ -22,17 +35,36 @@ export default function ListUsers() {
     }, []);
 
     return (
-        <section id="utilisateurs">
-            {/*{search}*/}
-            <h1 className="m-3">Liste des Users</h1>
-            <ul className="list-group m-3">
-                {users.map (u => (
-                    <li className="list-group-item d-flex align-tiems-center">
-                        {u.firstName} {u.lastName}
-                        <button className="btn btn-sm ms-auto btn-outline-success">&#x2713;</button>
-                    </li>)
+        <Container sx={{py: 8}}>
+            <h2>Liste des Utilisateurs</h2>
+            <Grid container spacing={4}>
+                {users.map((u) => (
+                        <Grid item key={u.id}>
+                            <Card sx={{maxWidth: 345}}>
+                                {/*<CardMedia*/}
+                                {/*    sx={{height: 140}}*/}
+                                {/*    image={u.image}*/}
+                                {/*    title="image"*/}
+                                {/*/>*/}
+                                <CardContent>
+                                    <Typography variant="body 1" component="div">
+                                        Utilisateur {u.id}
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary">
+                                        {u.firstName}
+                                    </Typography>
+                                    <Typography variant="body3" color="text.secondary">
+                                        {u.lastName}
+                                    </Typography><br/>
+                                    <Typography variant="body4" color="text.secondary">
+                                        A vendu {u.soldTicketsNumber} Tiquets
+                                    </Typography>
+                                    </CardContent>
+                            </Card>
+                        </Grid>
+                    )
                 )}
-            </ul>
-        </section>
+            </Grid>
+        </Container>
     );
 }

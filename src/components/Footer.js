@@ -43,6 +43,7 @@ export default function Footer() {
                 </Container>
                 <div className="btn-group">
                     <NavLink to="/listusers" className="btn btn-outline-dark bg-light">  Bouton Liste users  </NavLink>
+                    <NavLink to="/userprofile" className="btn btn-outline-dark bg-light">  Votre profil  </NavLink>
                     <NavLink to="/signin" className="btn btn-outline-dark bg-light">  Se connecter  </NavLink>
                     <NavLink to="/register" className="btn btn-outline-dark bg-light">  Créer un compte  </NavLink>
                     <Signout/>
