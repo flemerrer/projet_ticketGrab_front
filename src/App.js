@@ -4,8 +4,9 @@ import {Outlet, Route, Routes} from 'react-router-dom';
 import React from 'react';
 import {Link} from '@mui/material';
 import EventList from "./components/EventList";
-import Footer from "./components/Footer";
-import NavBar from "./components/NavBar";
+import Footer from "./components/navigation/Footer";
+import NavBar from "./components/navigation/NavBar";
+import HomePage from "./components/Homepage";
 
 export default function App() {
   return (
@@ -16,7 +17,7 @@ export default function App() {
 
         <Routes>
             <Route path='/'>
-                <Route path='home' element={<Home/>} />
+                <Route index element={<HomePage/>} />
                 {/*<Route path='login' element={<Register/>}/>*/}
                 {/*<Route path='login' element={<Login/>}/>*/}
                 <Route path='eventlist' element={<EventList />} />
