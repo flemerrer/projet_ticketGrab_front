@@ -7,10 +7,10 @@ import Footer from "./components/Footer";
 import SignIn from "./components/SignIn";
 import UserProfile from "./components/UserProfile";
 import SignUp from "./components/SignUp";
-import {Outlet, Route, Routes} from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
 import EventList from "./components/EventList";
-import Signout from "./components/Signout";
 import NavBar from "./components/NavBar";
+import HomePage from "./components/Homepage";
 
 export default function App() {
   return (
@@ -20,20 +20,19 @@ export default function App() {
         <NavBar />
 
         <Routes>
-            {/*<Route path='/' element={<Home/>}>*/}
-
-            <Route path='eventlist' element={<EventList />} ></Route>
-
-                <Route path='/listusers' element={<ListUsers/>}></Route>
-                <Route path='/signin' element={<SignIn/>}></Route>
-                <Route path='/register' element={<SignUp/>}></Route>
-                <Route path='/userprofile' element={<UserProfile/>}></Route>
-
-                <Route path='/*' element={<NoMatch/>}></Route>
+            <Route path='/'>
+                <Route index element={<HomePage/>} />
+                <Route path='events' element={<EventList />} />
+                <Route path='listusers' element={<ListUsers/>} />
+                <Route path='signin' element={<SignIn/>} />
+                <Route path='register' element={<SignUp/>} />
+                <Route path='userprofile' element={<UserProfile/>} />
+            </Route>
+            <Route path='/*' element={<NoMatch/>} />
         </Routes>
-        <div className="App">
-            <Footer/>
-        </div>
+
+        <Footer/>
+
     </div>
 );
 }

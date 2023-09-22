@@ -61,7 +61,30 @@ function NavBar() {
                         NOT TICKETSWAP
                     </Typography>
 
-                    <Box sx={{display: { xs: 'flex', md: 'none' }}}>
+                    <Searchbar />
+
+                    <Box sx={{ml:2, display: { xs: 'none', lg: 'flex' }, justifyContent: 'flex-end'}}>
+                        <Button
+                            onClick={handleCloseNavMenu}
+                            sx={{ my: 2, color: 'white', display: 'block' }}
+                        >
+                            Mes tickets
+                        </Button>
+                        <Button
+                            onClick={handleCloseNavMenu}
+                            sx={{ my: 2, color: 'white', display: 'block' }}
+                        >
+                            Mes annonces
+                        </Button>
+                        <Button
+                            onClick={handleCloseNavMenu}
+                            sx={{ my: 2, color: 'white', display: 'block' }}
+                        >
+                            Vendre un ticket
+                        </Button>
+                    </Box>
+
+                    <Box sx={{display: { xs: 'flex', lg: 'none' }}}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -100,29 +123,6 @@ function NavBar() {
                                 <Typography textAlign="center">Vendre un ticket</Typography>
                             </MenuItem>
                         </Menu>
-                    </Box>
-
-                    <Searchbar />
-
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end'}}>
-                        <Button
-                            onClick={handleCloseNavMenu}
-                            sx={{ my: 2, color: 'white', display: 'block' }}
-                        >
-                            Mes tickets
-                        </Button>
-                        <Button
-                            onClick={handleCloseNavMenu}
-                            sx={{ my: 2, color: 'white', display: 'block' }}
-                        >
-                            Mes annonces
-                        </Button>
-                        <Button
-                            onClick={handleCloseNavMenu}
-                            sx={{ my: 2, color: 'white', display: 'block' }}
-                        >
-                            Vendre un ticket
-                        </Button>
                     </Box>
 
                     <Box sx={{ flexGrow: 0, ml: 2 }}>
