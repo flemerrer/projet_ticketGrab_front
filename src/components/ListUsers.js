@@ -10,13 +10,15 @@ export default function ListUsers() {
         fetch('http://localhost:8080/api/allusers', {
             headers:{
                 'Content-Type': 'application/json',
-                Authorization: 'Bearer' + localStorage.getItem('token'),
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
             },
         })
+            // .then(res => console.table(res))
             .then(res => res.json())
+            // .then(res => console.table(res))
             .then(users=>
                 setUsers(users));
-        console.table(users);
+        // console.table(users);
     }, []);
 
     return (

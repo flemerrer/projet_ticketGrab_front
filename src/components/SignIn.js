@@ -48,6 +48,7 @@ export default function SignIn() {
             email: data.get('email'),
             password: data.get('password'),
         };
+        localStorage.setItem('email', data.get('email'));
 
         axios.post('http://localhost:8080/auth/login', loginData)
             .then(function (response) {
@@ -56,7 +57,7 @@ export default function SignIn() {
             .then(function (token) {
                 localStorage.setItem('token',token);
                 console.log(localStorage);
-                navigate("/listusers");
+                navigate("/userprofile");
             })
     .catch(function (error) {
                 console.log(error);

@@ -2,11 +2,12 @@ import * as React from 'react';
 import {useEffect, useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
 
-export default function ListUsers() {
+export default function UserProfile() {
     const [user, setUser] = useState([]);
-
     useEffect(() => {
-        fetch('http://localhost:8080/api/allusers', {
+        const email = localStorage.getItem('email');
+        console.log(email);
+        fetch(`http://localhost:8080/api/user/${email}`, {
             method: 'GET',
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}` // Assuming you are using Bearer token authentication
@@ -27,13 +28,12 @@ export default function ListUsers() {
     return (
         <>
             <h1 className="m-3">Données de l'utilisateur</h1>
-            {user.map (u => (
             <div>
-                <p>{u.firstName}</p>
-                <p>{u.lastName}</p>
-                <p>{u.email}</p>
-                <p>{u.password}</p>
-            </div>))}
+                <p>{user.firstName}</p>
+                <p>{user.lastName}</p>
+                <p>{user.email}</p>
+                <p>{user.password}</p>
+            </div>
         </>
     );
     }
