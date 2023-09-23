@@ -1,72 +1,34 @@
 import './App.css';
+import {Route, Routes} from "react-router-dom";
 import React from "react";
-import {Link} from "@mui/material";
-import ListUsers from "./components/ListUsers";
-import Footer from "./components/navigation/Footer";
-import NavBar from "./components/navigation/NavBar";
-import SignIn from "./components/SignIn";
-import UserProfile from "./components/UserProfile";
-import SignUp from "./components/SignUp";
-import {Route, Routes} from 'react-router-dom';
-import EventList from "./components/EventList";
-import HomePage from "./components/Homepage";
 import Tickets from "./components/Tickets";
 import AddTicket from "./components/AddTicket";
+import EventList from "./components/EventList";
+import Footer from "./components/Footer";
+import NavBar from "./components/NavBar";
+import {Link} from "@mui/material";
+import MesTickets from "./components/MesTickets";
 
-export default function App() {
+
+const App = () => {
     return (
-
-        <div className='App'>
-
+        <>
             <NavBar/>
-
-            <Routes>
-                <Route path='/'>
-                    <Route index element={<HomePage/>}/>
-                    <Route path='events' element={<EventList/>}/>
-                    <Route path='listusers' element={<ListUsers/>}/>
-                    <Route path='signin' element={<SignIn/>}/>
-                    <Route path='/ticket/add' element={<AddTicket />} />
-                    <Route path='/ticket' element={<Tickets/>}/>
-                    <Route path='register' element={<SignUp/>}/>
-                    <Route path='userprofile' element={<UserProfile/>}/>
-                </Route>
-                <Route path='/*' element={<NoMatch/>}/>
-            </Routes>
-
+                <Routes>
+                    <Route path='/'>
+                        {/*<Route path='login' element={<Register/>}/>*/}
+                        {/*<Route path='login' element={<Login/>}/>*/}
+                        <Route path='/ticket/add' element={<AddTicket/>}/>
+                        <Route path='/ticket' element={<Tickets/>}/>
+                        <Route path='/mestickets' element={<MesTickets/>}/>
+                        <Route path='eventlist' element={<EventList/>}/>
+                    </Route>
+                    <Route path='/*' element={<NoMatch/>}/>
+                </Routes>
             <Footer/>
-
-        </div>
-    );
+        </>
+);
 }
-
-// const [users, setUsers] = useState([]);
-//
-// useEffect(() => {
-//     fetch('http://localhost:8080/api/allusers')
-//         .then(res => res.json())
-//         .then(users=>
-//             setUsers(users));
-//     console.table(users);
-// }, []);
-//
-// return (
-//     <section id="utilisateurs">
-//         {/*{search}*/}
-//         <h1 className="m-3">Liste des Users</h1>
-//         <ul className="list-group m-3">
-//             {users.map (u => (
-//                 <li className="list-group-item d-flex align-tiems-center">
-//                     {u.firstName} {u.lastName}
-//                     <button className="btn btn-sm ms-auto btn-outline-success">&#x2713;</button>
-//                 </li>)
-//             )}
-//         </ul>
-//     </section>
-// );
-
-
-
 
 function NoMatch() {
     return (
@@ -78,3 +40,5 @@ function NoMatch() {
         </div>
     );
 }
+
+export default App;
