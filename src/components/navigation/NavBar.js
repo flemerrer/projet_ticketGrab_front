@@ -13,6 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Searchbar from "./SearchBar";
+import {NavLink} from "react-router-dom";
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -148,8 +149,13 @@ function NavBar() {
                             onClose={handleCloseUserMenu}
                         >
                             <MenuItem onClick={handleCloseNavMenu}>
-                                <Typography textAlign="center">Voir mon profil</Typography>
+                                {/*<Typography href="/userprofile" textAlign="center">Voir mon profil</Typography><br/>*/}
+                                <NavLink to="/userprofile" className="btn btn-outline-dark bg-light" textAlign="center">  Votre profil  </NavLink><br/>
+                                <NavLink to="/otherprofile" className="btn btn-outline-dark bg-light" textAlign="center">  Profil d'un autre User  </NavLink><br/>
+                                <NavLink to="/signin" className="btn btn-outline-dark bg-light">  Se connecter  </NavLink><br/>
+                                <NavLink to="/register" className="btn btn-outline-dark bg-light">  Créer un compte  </NavLink>
                             </MenuItem>
+
                         </Menu>
                     </Box>
                 </Toolbar>
