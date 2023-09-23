@@ -58,7 +58,7 @@ export default function UserProfile() {
     const deleteAccount= (event) => {
         const email = localStorage.getItem('email');
         console.log(email + password);
-        fetch(`http://localhost:8080/deleteuser`, email, {
+        fetch(`http://localhost:8080/api/deleteuser`, email, {
             method: 'POST',
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}` // Assuming you are using Bearer token authentication
