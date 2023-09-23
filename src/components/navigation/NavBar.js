@@ -17,7 +17,6 @@ import {useNavigate} from "react-router-dom";
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-
 function NavBar() {
     const navigate = useNavigate();
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -150,10 +149,18 @@ function NavBar() {
                                 horizontal: 'right',
                             }}
                             open={Boolean(anchorElUser)}
-                            onClose={handleCloseUserMenu}
-                        >
+                            onClose={handleCloseUserMenu}>
                             <MenuItem onClick={() => handleCloseNavMenu('signin')}>
                                 <Typography textAlign="center">Se connecter</Typography>
+                            </MenuItem>
+                            <MenuItem onClick={() => handleCloseNavMenu('register')}>
+                                <Typography textAlign="center">Créer un Compte</Typography>
+                            </MenuItem>
+                            <MenuItem onClick={() => handleCloseNavMenu('userprofile')}>
+                                <Typography textAlign="center">Afficher vos informations personnelles</Typography>
+                            </MenuItem>
+                            <MenuItem onClick={() => handleCloseNavMenu('otherprofile')}>
+                                <Typography textAlign="center">Afficher le profil dun autre utilisateur</Typography>
                             </MenuItem>
                         </Menu>
                     </Box>

@@ -10,6 +10,7 @@ import SignUp from "./components/SignUp";
 import {Route, Routes} from 'react-router-dom';
 import EventList from "./components/EventList";
 import HomePage from "./components/Homepage";
+import OtherProfile from "./components/OtherProfile";
 
 export default function App() {
     return (
@@ -26,6 +27,7 @@ export default function App() {
                     <Route path='signin' element={<SignIn/>}/>
                     <Route path='register' element={<SignUp/>}/>
                     <Route path='userprofile' element={<UserProfile/>}/>
+                    <Route path='otherprofile' element={<OtherProfile/>}/>
                 </Route>
                 <Route path='/*' element={<NoMatch/>}/>
             </Routes>

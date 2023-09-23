@@ -57,7 +57,7 @@ export default function UserProfile() {
     };
     const deleteAccount= (event) => {
         const email = localStorage.getItem('email');
-        console.log(email + password);
+        console.log(email);
         fetch(`http://localhost:8080/api/deleteuser`, email, {
             method: 'POST',
             headers: {
@@ -72,7 +72,7 @@ export default function UserProfile() {
     };
 
     return (
-        <Container sx={{py: 8}}>
+        <Container sx={{py: 8}} textAlign="center">
             <h2>Vos Informations personelles</h2>
             <Grid container spacing={4}>
                         <Grid item key={user.id}>
