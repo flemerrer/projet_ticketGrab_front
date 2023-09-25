@@ -3,9 +3,12 @@ import {Box, Button, Card, CardContent, Container, Grid, TextField, Typography} 
 
 export default function OtherProfile() {
     const [firstname, setFirstname] =useState(null);
-    const [user, setUser] = useState([]);
+    const [users, setUsers] = useState([]);
 
     const firstnameChangeHandler= (event) => {
+        // setFirstname(event.target.value);
+        event.preventDefault();
+        console.log(firstname);
         fetch(`http://localhost:8080/api/otheruser/${firstname}`, {
             method: 'GET',
             headers: {
@@ -13,9 +16,9 @@ export default function OtherProfile() {
             }
         })
             .then(response => response.json())
-            .then(user => {
-                setUser(user);
-                console.table(user);
+            .then(users => {
+                setUsers(users);
+                console.table(users);
                 // Handle the response data here
             })
             .catch(error => {
@@ -32,8 +35,8 @@ export default function OtherProfile() {
                     <TextField
                         id="txtName"
                         required
-                        name="description"
-                        label="description"
+                        name="firstname"
+                        label="firstname"
                         type="text"
                         value={firstname}
                         onChange={(e) => setFirstname(e.target.value)}
@@ -44,7 +47,7 @@ export default function OtherProfile() {
             <Container sx={{py: 8}} textAlign="center">
                 <h2>Profils recherchés</h2>
                 <Grid container spacing={4}>
-                    {user.map((u) => (
+                    {users.map((u) => (
                     <Grid item key={u.id}>
                         <Card sx={{maxWidth: 345}}>
                             {/*<CardMedia*/}

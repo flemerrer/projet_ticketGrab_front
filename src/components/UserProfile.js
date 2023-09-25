@@ -72,17 +72,14 @@ export default function UserProfile() {
     };
 
     return (
-        <Container sx={{py: 8}} textAlign="center">
-            <h2>Vos Informations personelles</h2>
-            <Grid container spacing={4}>
-                        <Grid item key={user.id}>
-                            <Card sx={{maxWidth: 345}}>
+
+                            <Card sx={{ maxWidth: 345, margin: '0 auto', textAlign: 'center' }}>
                                 {/*<CardMedia*/}
                                 {/*    sx={{height: 140}}*/}
                                 {/*    image={u.image}*/}
                                 {/*    title="image"*/}
                                 {/*/>*/}
-                                <CardContent>
+                                <CardContent >
                                     <Typography variant="body 1" component="div">
                                         Utilisateur {user.id}
                                     </Typography>
@@ -116,9 +113,7 @@ export default function UserProfile() {
                                         <Button type="submit" key={user.id} onClick={(event) => deleteAccount(event)}>Add</Button>
                                     </Typography>
                                 </CardContent>
-                            </Card>
-                        </Grid>
-            </Grid>
-        </Container>
+                           </Card>
+
     );
     }
