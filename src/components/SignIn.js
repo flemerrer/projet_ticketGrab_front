@@ -80,7 +80,7 @@ export default function SignIn() {
                     {/*    <LockOutlinedIcon />*/}
                     {/*</Avatar>*/}
                     <Typography component="h1" variant="h5">
-                        Sign in
+                        Connexion
                     </Typography>
                     <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
                         <TextField
@@ -88,7 +88,7 @@ export default function SignIn() {
                             required
                             fullWidth
                             id="email"
-                            label="Email Address"
+                            label="Adresse email"
                             name="email"
                             autoComplete="email"
                             autoFocus
@@ -98,22 +98,22 @@ export default function SignIn() {
                             required
                             fullWidth
                             name="password"
-                            label="Password"
+                            label="Mot de passe"
                             type="password"
                             id="password"
                             autoComplete="current-password"
                         />
-                        <FormControlLabel
-                            control={<Checkbox value="remember" color="primary" />}
-                            label="Remember me"
-                        />
+                        {/*<FormControlLabel*/}
+                        {/*    control={<Checkbox value="remember" color="primary" />}*/}
+                        {/*    label="Remember me"*/}
+                        {/*/>*/}
                         <Button
                             type="submit"
                             fullWidth
                             variant="contained"
                             sx={{ mt: 3, mb: 2 }}
                         >
-                            Sign In
+                            Connexion
                         </Button>
                         <Grid container>
                             {/*<Grid item xs>*/}
@@ -123,7 +123,7 @@ export default function SignIn() {
                             {/*</Grid>*/}
                             <Grid item>
                                 <Link href="/register" variant="body2">
-                                    {"Don't have an account? Sign Up"}
+                                    {"Vous n'avez pas de compte? Inscrivez-vous ici!"}
                                 </Link>
                             </Grid>
                         </Grid>

@@ -29,19 +29,19 @@ export default function OtherProfile() {
 
     return (
         <div>
-            <h1>Prénom de l'Utilisateur recherché:</h1>
+            <h1>Prénom de l'utilisateur recherché:</h1>
             <Container>
                 <Box component="form" onSubmit={firstnameChangeHandler} noValidate>
                     <TextField
                         id="txtName"
                         required
                         name="firstname"
-                        label="firstname"
+                        label="Prénom..."
                         type="text"
                         value={firstname}
                         onChange={(e) => setFirstname(e.target.value)}
                     />
-                    <Button type="submit">Add</Button>
+                    <Button type="submit">Recherche</Button>
                 </Box>
             </Container>
             <Container sx={{py: 8}} textAlign="center">
@@ -69,7 +69,7 @@ export default function OtherProfile() {
                                     Email: {u.email}
                                 </Typography><br/>
                                 <Typography variant="body4" color="text.secondary">
-                                    L'utilisateur a vendu {u.soldTicketsNumber} tiquets!
+                                    L'utilisateur a vendu {u.soldTicketsNumber} tickets!
                                 </Typography><br/>
                             </CardContent>
                         </Card>
