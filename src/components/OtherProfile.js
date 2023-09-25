@@ -9,7 +9,7 @@ export default function OtherProfile() {
         // setFirstname(event.target.value);
         event.preventDefault();
         console.log(firstname);
-        fetch(`http://localhost:8080/api/otheruser/${firstname}`, {
+        fetch(`http://localhost:8080/opi/otheruser/${firstname}`, {
             method: 'GET',
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}` // Assuming you are using Bearer token authentication
