@@ -160,7 +160,7 @@ function NavBar() {
                                 <Typography textAlign="center">Afficher vos informations personnelles</Typography>
                             </MenuItem>
                             <MenuItem onClick={() => handleCloseNavMenu('otherprofile')}>
-                                <Typography textAlign="center">Afficher le profil dun autre utilisateur</Typography>
+                                <Typography textAlign="center">Afficher le profil d'un autre utilisateur</Typography>
                             </MenuItem>
                         </Menu>
                     </Box>
