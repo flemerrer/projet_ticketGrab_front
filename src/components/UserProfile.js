@@ -43,7 +43,7 @@ export default function UserProfile() {
     const changePassword = (event) => {
         const email = localStorage.getItem('email');
         console.log(email + password);
-        fetch(`http://localhost:8080/api/updatepassword/${email}/${password}`, {
+        fetch(`http://localhost:8080/opi/updatepassword/${email}/${password}`, {
             method: 'POST',
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}` // Assuming you are using Bearer token authentication

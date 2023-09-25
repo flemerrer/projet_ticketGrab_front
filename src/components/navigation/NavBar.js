@@ -11,13 +11,14 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+import PublishedWithChangesOutlinedIcon from '@mui/icons-material/PublishedWithChangesOutlined';
 import Searchbar from "./SearchBar";
-import {NavLink} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function NavBar() {
+    const navigate = useNavigate();
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -29,8 +30,9 @@ function NavBar() {
         setAnchorElUser(event.currentTarget);
     };
 
-    const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
+    const handleCloseNavMenu = (props) => {
+        setAnchorElNav(props);
+        navigate(`/${props}`)
     };
 
     const handleCloseUserMenu = () => {
@@ -42,24 +44,25 @@ function NavBar() {
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
 
-                    <AdbIcon sx={{ display: { xs: 'flex', md: 'flex' }, mr: 1 }} />
+                    <PublishedWithChangesOutlinedIcon sx={{ display: { xs: 'flex', md: 'flex' }, mr: 1 }} />
 
                     <Typography
                         variant="h6"
                         noWrap
                         component="a"
-                        href="/"
+                        onClick={() => handleCloseNavMenu('')}
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'monospace',
+                            fontFamily: 'Poppins',
                             fontWeight: 700,
-                            letterSpacing: '.3rem',
+                            fontStyle: 'oblique',
+                            letterSpacing: '.1rem',
                             color: 'inherit',
                             textDecoration: 'none',
                         }}
                     >
-                        NOT TICKETSWAP
+                        Ticket Grab
                     </Typography>
 
                     <Searchbar />
@@ -129,7 +132,7 @@ function NavBar() {
                     <Box sx={{ flexGrow: 0, ml: 2 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                <Avatar alt="Sylvain" src="./Sylvain.jpg" />
                             </IconButton>
                         </Tooltip>
                         <Menu
@@ -146,16 +149,19 @@ function NavBar() {
                                 horizontal: 'right',
                             }}
                             open={Boolean(anchorElUser)}
-                            onClose={handleCloseUserMenu}
-                        >
-                            <MenuItem onClick={handleCloseNavMenu}>
-                                {/*<Typography href="/userprofile" textAlign="center">Voir mon profil</Typography><br/>*/}
-                                <NavLink to="/userprofile" className="btn btn-outline-dark bg-light" textAlign="center">  Votre profil  </NavLink><br/>
-                                <NavLink to="/otherprofile" className="btn btn-outline-dark bg-light" textAlign="center">  Profil d'un autre User  </NavLink><br/>
-                                <NavLink to="/signin" className="btn btn-outline-dark bg-light">  Se connecter  </NavLink><br/>
-                                <NavLink to="/register" className="btn btn-outline-dark bg-light">  Créer un compte  </NavLink>
+                            onClose={handleCloseUserMenu}>
+                            <MenuItem onClick={() => handleCloseNavMenu('signin')}>
+                                <Typography textAlign="center">Se connecter</Typography>
                             </MenuItem>
-
+                            <MenuItem onClick={() => handleCloseNavMenu('register')}>
+                                <Typography textAlign="center">Créer un Compte</Typography>
+                            </MenuItem>
+                            <MenuItem onClick={() => handleCloseNavMenu('userprofile')}>
+                                <Typography textAlign="center">Afficher vos informations personnelles</Typography>
+                            </MenuItem>
+                            <MenuItem onClick={() => handleCloseNavMenu('otherprofile')}>
+                                <Typography textAlign="center">Afficher le profil d'un autre utilisateur</Typography>
+                            </MenuItem>
                         </Menu>
                     </Box>
                 </Toolbar>

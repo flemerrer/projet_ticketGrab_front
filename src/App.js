@@ -38,6 +38,8 @@ export default function App() {
     );
 }
 
+//Main MUI colors: #0288d1, #ed6c02, #9c27b0
+
 // const [users, setUsers] = useState([]);
 //
 // useEffect(() => {

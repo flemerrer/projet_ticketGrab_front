@@ -3,6 +3,7 @@ import {useState, useEffect, useParams} from 'react';
 import {List, Card, CardActions, CardContent, Typography, Button, ListItem, Grid} from '@mui/material';
 import axios from "axios";
 import {FilterButton} from "./FilterButton";
+import {Event} from "@mui/icons-material";
 
 export default function EventList() {
 

@@ -48,7 +48,7 @@ export default function Searchbar(){
                     <SearchIcon />
                 </SearchIconWrapper>
                 <StyledInputBase
-                    placeholder="Search…"
+                    placeholder="Chercher un événement..."
                     inputProps={{ 'aria-label': 'search' }}
                 />
             </Search>
