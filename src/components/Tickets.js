@@ -17,24 +17,70 @@ import axios from "axios";
 import DeleteIcon from '@mui/icons-material/Delete';
 
 
-
 export default function Tickets() {
 
-    const [tickets, setTickets] = useState([]);
+    const tickets = [
+        {
+            "name": "BERCY ZOOM",
+            "event": "TOTO LAST SHOW",
+            "img": "https://images.unsplash.com/photo-1655723122539-6f4288ed14c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
+            "price": "120",
+            "id": 1
+        },
+        {
+            "name": "CITY LIVE",
+            "event": "BONGO LIVE",
+            "img": "https://plus.unsplash.com/premium_photo-1695200708808-a0744dd42d5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
+            "price": "25",
+            "id": 2
+        },
+        {
+            "name": "NIJU",
+            "event": "YES YES TIME",
+            "img": "https://images.unsplash.com/photo-1643914543607-7f755947dd70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60",
+            "price": "35",
+            "id": 3
+        },
+        {
+            "name": "BOOBA & K-RIXE",
+            "event": "Roisy CDG",
+            "img": "https://images.unsplash.com/photo-1664661167811-50344036d2db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60",
+            "price": "1200",
+            "id": 4
+        },
+        {
+            "name": "jhmiuhi",
+            "event": "bkijhmuhù",
+            "img": "https://images.unsplash.com/photo-1643914543607-7f755947dd70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60",
+            "price": "189498",
+            "id": 5
+        },
+        {
+            "name": "çot_oè_rè_tçèç",
+            "event": "çtçtçtç",
+            "img": "https://images.unsplash.com/photo-1655723122539-6f4288ed14c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
+            "price": "10",
+            "id": 6
+        }
+    ]
 
-    useEffect(() => {
-        axios.get('http://localhost:4000/tickets')
-            .then(response => response.data)
-            .then(tickets => setTickets(tickets))
-    }, []);
 
-    function deleteTicket(ticketId) {
-        axios.delete(`http://localhost:4000/tickets/${ticketId}`)
-            .then(response => {
-                setTickets(tickets.filter(t => t.id !== ticketId));
-            });
-    }
 
+    // const [tickets] = useState([]);
+    //
+    // useEffect(() => {
+    //     axios.get('http://localhost:4000/tickets')
+    //         .then(response => response.data)
+    //         .then(tickets => setTickets(tickets))
+    // }, []);
+    //
+    // function deleteTicket(ticketId) {
+    //     axios.delete(`http://localhost:4000/tickets/${ticketId}`)
+    //         .then(response => {
+    //             setTickets(tickets.filter(t => t.id !== ticketId));
+    //         });
+    // }
+    //
     return (
         <>
             <Container sx={{py: 8}} >

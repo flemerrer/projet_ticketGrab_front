@@ -22,7 +22,6 @@ export default function AddTicket() {
 
         axios.post('http://localhost:4000/tickets', newTicket)
             .then(response => navigate('/ticket'))
-
     }
 
     return (
