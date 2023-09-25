@@ -8,25 +8,38 @@ import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 import {Link} from "@mui/material";
 import MesTickets from "./components/MesTickets";
-
+import Signout from "./components/Signout";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
+import UserProfile from "./components/UserProfile";
+import ListUsers from "./components/ListUsers";
+import Homepage from "./components/Homepage";
 
 const App = () => {
     return (
-        <>
-            <NavBar/>
-                <Routes>
-                    <Route path='/'>
-                        {/*<Route path='login' element={<Register/>}/>*/}
-                        {/*<Route path='login' element={<Login/>}/>*/}
-                        <Route path='/ticket/add' element={<AddTicket/>}/>
-                        <Route path='/ticket' element={<Tickets/>}/>
-                        <Route path='/mestickets' element={<MesTickets/>}/>
-                        <Route path='eventlist' element={<EventList/>}/>
-                    </Route>
-                    <Route path='/*' element={<NoMatch/>}/>
-                </Routes>
-            <Footer/>
-        </>
+        <div className='App'>
+            <div className="App">
+                <NavBar/>
+            </div>
+            <Routes>
+                <Route path='/'>
+                    <Route path='home' element={<Homepage/>} />
+                    <Route path='/listusers' element={<ListUsers/>}/>
+                    <Route path='/signin' element={<SignIn/>}/>
+                    <Route path='/signout' element={<Signout/>}/>
+                    <Route path='/ticket/add' element={<AddTicket/>}/>
+                    <Route path='/ticket' element={<Tickets/>}/>
+                    <Route path='/mestickets' element={<MesTickets/>}/>
+                    <Route path='/register' element={<SignUp/>}/>
+                    <Route path='/userprofile' element={<UserProfile/>}/>
+                    <Route path='eventlist' element={<EventList />} />
+                </Route>
+                <Route path='/*' element={<NoMatch/>}/>
+            </Routes>
+            <div className="App">
+                <Footer/>
+            </div>
+        </div>
 );
 }
 

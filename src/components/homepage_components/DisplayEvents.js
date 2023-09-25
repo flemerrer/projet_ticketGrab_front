@@ -1,16 +1,12 @@
 import {
-    Card,
-    CardContent,
-    CardMedia,
     Typography,
-    Grid,
-    Button, Paper, ImageListItemBar, ImageListItem, ImageList,
+    Paper,
 } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import Carousel from 'react-material-ui-carousel';
 
-export default function DisplayEvents() {
+    export default function DisplayEvents() {
 
     const items = [
         {

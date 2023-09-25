@@ -16,6 +16,8 @@ import {
 import axios from "axios";
 import DeleteIcon from '@mui/icons-material/Delete';
 
+
+
 export default function Tickets() {
 
     const [tickets, setTickets] = useState([]);
@@ -65,7 +67,6 @@ export default function Tickets() {
                                         <IconButton color="primary" aria-label="add to shopping cart">
                                             <AddShoppingCartIcon />
                                         </IconButton>
-                                        <Button size="small"  variant="outlined" startIcon={<DeleteIcon/>} color="error" onClick={() => deleteTicket(ticket.id)}>Delete</Button>
                                     </CardActions>
                                 </Card>
                             </Grid>
