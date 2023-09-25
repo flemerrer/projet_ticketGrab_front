@@ -36,7 +36,7 @@ export default function ListUsers() {
 
     return (
         <Container sx={{py: 8}}>
-            <h2>Liste des Utilisateurs</h2>
+            <h2>Liste des utilisateurs</h2>
             <Grid container spacing={4}>
                 {users.map((u) => (
                         <Grid item key={u.id}>
@@ -51,13 +51,13 @@ export default function ListUsers() {
                                         Utilisateur {u.id}
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary">
-                                        {u.firstName}
+                                        Prénom : {u.firstName}
                                     </Typography>
                                     <Typography variant="body3" color="text.secondary">
-                                        {u.lastName}
+                                        Nom : {u.lastName}
                                     </Typography><br/>
                                     <Typography variant="body4" color="text.secondary">
-                                        A vendu {u.soldTicketsNumber} Tiquets
+                                        A vendu {u.soldTicketsNumber} tickets!
                                     </Typography>
                                     </CardContent>
                             </Card>

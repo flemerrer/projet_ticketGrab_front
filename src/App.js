@@ -14,6 +14,8 @@ import SignUp from "./components/SignUp";
 import UserProfile from "./components/UserProfile";
 import ListUsers from "./components/ListUsers";
 import Homepage from "./components/Homepage";
+import OtherProfile from "./components/OtherProfile";
+
 
 const App = () => {
     return (
@@ -33,6 +35,12 @@ const App = () => {
                     <Route path='/register' element={<SignUp/>}/>
                     <Route path='/userprofile' element={<UserProfile/>}/>
                     <Route path='eventlist' element={<EventList />} />
+                    <Route path='events' element={<EventList/>}/>
+                    <Route path='listusers' element={<ListUsers/>}/>
+                    <Route path='signin' element={<SignIn/>}/>
+                    <Route path='register' element={<SignUp/>}/>
+                    <Route path='userprofile' element={<UserProfile/>}/>
+                    <Route path='otherprofile' element={<OtherProfile/>}/>
                 </Route>
                 <Route path='/*' element={<NoMatch/>}/>
             </Routes>

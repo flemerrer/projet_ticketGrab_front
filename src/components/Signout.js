@@ -9,7 +9,7 @@ export default function Signout(){
     }
     return(
         <form form-method="post" onClick={déco}>
-                    <button type="submit">Log out!</button>
+                    <button type="submit">Déconnexion!</button>
         </form>
     )
 }

@@ -145,10 +145,25 @@ function NavBar() {
                                 horizontal: 'right',
                             }}
                             open={Boolean(anchorElUser)}
+<<<<<<< HEAD
                             onClose={handleCloseUserMenu}
                         >
                             <MenuItem onClick={handleCloseNavMenu}>
                                 <Typography textAlign="center">Voir mon profil</Typography>
+=======
+                            onClose={handleCloseUserMenu}>
+                            <MenuItem onClick={() => handleCloseNavMenu('signin')}>
+                                <Typography textAlign="center">Se connecter</Typography>
+>>>>>>> 38bc37214bc8a67b23c3b0a5e5727043f373ef06
+                            </MenuItem>
+                            <MenuItem onClick={() => handleCloseNavMenu('register')}>
+                                <Typography textAlign="center">Créer un Compte</Typography>
+                            </MenuItem>
+                            <MenuItem onClick={() => handleCloseNavMenu('userprofile')}>
+                                <Typography textAlign="center">Afficher vos informations personnelles</Typography>
+                            </MenuItem>
+                            <MenuItem onClick={() => handleCloseNavMenu('otherprofile')}>
+                                <Typography textAlign="center">Afficher le profil d'un autre utilisateur</Typography>
                             </MenuItem>
                         </Menu>
                     </Box>

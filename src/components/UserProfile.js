@@ -57,7 +57,7 @@ export default function UserProfile() {
     };
     const deleteAccount= (event) => {
         const email = localStorage.getItem('email');
-        console.log(email + password);
+        console.log(email);
         fetch(`http://localhost:8080/api/deleteuser`, email, {
             method: 'POST',
             headers: {
@@ -72,17 +72,14 @@ export default function UserProfile() {
     };
 
     return (
-        <Container sx={{py: 8}}>
-            <h2>Vos Informations personelles</h2>
-            <Grid container spacing={4}>
-                        <Grid item key={user.id}>
-                            <Card sx={{maxWidth: 345}}>
+
+                            <Card sx={{ maxWidth: 345, margin: '0 auto', textAlign: 'center' }}>
                                 {/*<CardMedia*/}
                                 {/*    sx={{height: 140}}*/}
                                 {/*    image={u.image}*/}
                                 {/*    title="image"*/}
                                 {/*/>*/}
-                                <CardContent>
+                                <CardContent >
                                     <Typography variant="body 1" component="div">
                                         Utilisateur {user.id}
                                     </Typography>
@@ -96,7 +93,7 @@ export default function UserProfile() {
                                         Email: {user.email}
                                     </Typography><br/>
                                     <Typography variant="body4" color="text.secondary">
-                                        Vous avez vendu {user.soldTicketsNumber} tiquets!
+                                        Vous avez vendu {user.soldTicketsNumber} tickets!
                                     </Typography><br/>
                                     <Typography variant="body4" color="text.secondary">
                                         Changer de mot de passe :
@@ -104,7 +101,7 @@ export default function UserProfile() {
                                             id="txtName"
                                             required
                                             name="mdp"
-                                            label="Password"
+                                            label="Nouveau mot de passe..."
                                             type="text"
                                             value={password} // Liez la valeur du champ à l'état "password"
                                             onChange={(e) => setPassword(e.target.value)} // Mettez à jour l'état lorsqu'il y a un changement
@@ -116,9 +113,7 @@ export default function UserProfile() {
                                         <Button type="submit" key={user.id} onClick={(event) => deleteAccount(event)}>Add</Button>
                                     </Typography>
                                 </CardContent>
-                            </Card>
-                        </Grid>
-            </Grid>
-        </Container>
+                           </Card>
+
     );
     }
