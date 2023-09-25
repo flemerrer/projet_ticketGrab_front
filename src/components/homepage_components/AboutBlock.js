@@ -20,6 +20,7 @@ export default function AboutBlock() {
                     ,
                     backgroundImage: `url(platines.jpg)`
                     ,
+                    mt:8
                 }
 
                 }

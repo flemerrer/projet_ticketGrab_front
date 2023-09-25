@@ -4,7 +4,7 @@ import {
     CardMedia,
     Typography,
     Grid,
-    Button, Paper, ImageListItemBar, ImageListItem, ImageList,
+    Button, Paper, ImageListItemBar, ImageListItem, ImageList, Box,
 } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -32,28 +32,30 @@ export default function DisplayEvents() {
 
     return (
         <>
-            <Typography variant='h2'>Evenements à la une</Typography>
-            <br/>
-            <Carousel
-                sx={{
-                    width: '100%',
-                    height: '100%'
-                }}
-                // next={(now: any, previous:any) => console.log(`Next User Callback: Now displaying child ${now}. Previously displayed child ${previous}`)}
-                // prev={(now, previous) => console.log(`Prev User Callback: Now displaying child ${now}. Previously displayed child ${previous}`)}
-                // onChange={(now, previous) => console.log(`OnChange User Callback: Now displaying child ${now}. Previously displayed child ${previous}`)}
+            <Box sx={{mt:5}}>
+                <Typography variant='h3'>Evenements à la une</Typography>
+                <br/>
+                <Carousel
+                    sx={{
+                        width: '100%',
+                        height: '100%'
+                    }}
+                    // next={(now: any, previous:any) => console.log(`Next User Callback: Now displaying child ${now}. Previously displayed child ${previous}`)}
+                    // prev={(now, previous) => console.log(`Prev User Callback: Now displaying child ${now}. Previously displayed child ${previous}`)}
+                    // onChange={(now, previous) => console.log(`OnChange User Callback: Now displaying child ${now}. Previously displayed child ${previous}`)}
 
-                // navButtonsProps={{style: {backgroundColor: 'cornflowerblue', borderRadius: 0}}}
-                // navButtonsWrapperProps={{style: {bottom: '0', top: 'unset', }}}
-                // indicatorContainerProps={{style: {margin: "20px"}}}
-                NextIcon={<ArrowForwardIosIcon/>}
-                PrevIcon={<ArrowBackIosIcon/>}
-                navButtonsAlwaysVisible
-            >
-                {
-                    items.map( (item, i) => <Item key={i} item={item} />)
-                }
-            </Carousel>
+                    // navButtonsProps={{style: {backgroundColor: 'cornflowerblue', borderRadius: 0}}}
+                    // navButtonsWrapperProps={{style: {bottom: '0', top: 'unset', }}}
+                    // indicatorContainerProps={{style: {margin: "20px"}}}
+                    NextIcon={<ArrowForwardIosIcon/>}
+                    PrevIcon={<ArrowBackIosIcon/>}
+                    navButtonsAlwaysVisible
+                >
+                    {
+                        items.map( (item, i) => <Item key={i} item={item} />)
+                    }
+                </Carousel>
+            </Box>
         </>
     )
 
@@ -69,7 +71,8 @@ function Item({item})
                 src={item.img}
                 alt={item.name}
                 sx={{
-                    maxHeight: 500
+                    maxHeight: 400,
+                    maxWidth: 600
                 }}
                 loading='lazy'
             />
