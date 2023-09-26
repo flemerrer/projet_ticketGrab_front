@@ -1,0 +1,88 @@
+[33m4f1eed9[m[33m ([m[1;36mHEAD -> [m[1;32mfeature_connexion[m[33m, [m[1;31morigin/develop[m[33m, [m[1;32mdevelop[m[33m)[m HEAD@{0}: rebase (abort): returning to refs/heads/feature_connexion
+[33m60978e1[m HEAD@{1}: rebase (start): checkout origin
+[33m4f1eed9[m[33m ([m[1;36mHEAD -> [m[1;32mfeature_connexion[m[33m, [m[1;31morigin/develop[m[33m, [m[1;32mdevelop[m[33m)[m HEAD@{2}: merge develop: Fast-forward
+[33mfd704b7[m HEAD@{3}: checkout: moving from develop to feature_connexion
+[33m4f1eed9[m[33m ([m[1;36mHEAD -> [m[1;32mfeature_connexion[m[33m, [m[1;31morigin/develop[m[33m, [m[1;32mdevelop[m[33m)[m HEAD@{4}: pull: Merge made by the 'ort' strategy.
+[33mfd704b7[m HEAD@{5}: merge feature_connexion: Fast-forward
+[33me59f767[m HEAD@{6}: checkout: moving from feature_connexion to develop
+[33mfd704b7[m HEAD@{7}: commit: create basket en cours
+[33m7e0c975[m HEAD@{8}: commit: rch de users sur session invité fonctionnelle
+[33m1e6b8e4[m HEAD@{9}: rebase (abort): returning to refs/heads/feature_connexion
+[33m60978e1[m HEAD@{10}: rebase (start): checkout origin
+[33m1e6b8e4[m HEAD@{11}: merge develop: Merge made by the 'ort' strategy.
+[33m0a03526[m HEAD@{12}: commit: chgts urls opi
+[33m0d0d635[m HEAD@{13}: checkout: moving from develop to feature_connexion
+[33me59f767[m HEAD@{14}: commit: chgts d'urls opi
+[33m38bc372[m HEAD@{15}: commit (merge): essai de merge de feature_connexion
+[33mf0ad8a6[m HEAD@{16}: rebase (finish): returning to refs/heads/develop
+[33mf0ad8a6[m HEAD@{17}: rebase (pick): traduction des pages de connexion
+[33m1dca455[m HEAD@{18}: rebase (pick): rch d'users par prenom fonctionnel
+[33md720906[m HEAD@{19}: rebase (continue): rch users en cours ok
+[33m378d53f[m HEAD@{20}: rebase (start): checkout refs/remotes/origin/develop
+[33m0d0d635[m HEAD@{21}: rebase (abort): returning to refs/heads/develop
+[33m60978e1[m HEAD@{22}: rebase (start): checkout origin
+[33m0d0d635[m HEAD@{23}: checkout: moving from feature_connexion to develop
+[33m0d0d635[m HEAD@{24}: checkout: moving from develop to feature_connexion
+[33m0d0d635[m HEAD@{25}: rebase (abort): returning to refs/heads/develop
+[33m60978e1[m HEAD@{26}: rebase (start): checkout origin
+[33m0d0d635[m HEAD@{27}: rebase (finish): returning to refs/heads/develop
+[33m0d0d635[m HEAD@{28}: rebase (start): checkout feature_connexion
+[33m19d158a[m HEAD@{29}: checkout: moving from feature_connexion to develop
+[33m0d0d635[m HEAD@{30}: commit: traduction des pages de connexion
+[33m7b152ed[m HEAD@{31}: commit: rch d'users par prenom fonctionnel
+[33mc296a2f[m HEAD@{32}: commit: rch users en cours
+[33m19d158a[m HEAD@{33}: merge develop: Fast-forward
+[33mf50dbf3[m HEAD@{34}: checkout: moving from develop to feature_connexion
+[33m19d158a[m HEAD@{35}: pull: Merge made by the 'ort' strategy.
+[33mf50dbf3[m HEAD@{36}: merge feature_connexion: Fast-forward
+[33mb1d39a3[m HEAD@{37}: checkout: moving from feature_connexion to develop
+[33mf50dbf3[m HEAD@{38}: commit: change password fonctionnel 02
+[33m05a7e07[m HEAD@{39}: commit: change password fonctionnel
+[33mb1d39a3[m HEAD@{40}: rebase (finish): returning to refs/heads/feature_connexion
+[33mb1d39a3[m HEAD@{41}: rebase (start): checkout develop
+[33m60978e1[m HEAD@{42}: checkout: moving from develop to feature_connexion
+[33mb1d39a3[m HEAD@{43}: commit: au cas où
+[33me2a9fa5[m HEAD@{44}: commit: get fonctionnels
+[33m0ab56fe[m HEAD@{45}: commit: quelques débeugs
+[33m016bc68[m HEAD@{46}: commit (merge): essai de commit et push, pull en cours
+[33m60978e1[m HEAD@{47}: merge feature_connexion: Fast-forward
+[33m04bea1e[m HEAD@{48}: checkout: moving from feature_connexion to develop
+[33m60978e1[m HEAD@{49}: checkout: moving from develop to feature_connexion
+[33m04bea1e[m HEAD@{50}: rebase (finish): returning to refs/heads/develop
+[33m04bea1e[m HEAD@{51}: rebase (start): checkout origin
+[33m60978e1[m HEAD@{52}: commit: énième test de rebase push
+[33m25ea6a9[m HEAD@{53}: checkout: moving from develop to feature_connexion
+[33m04bea1e[m HEAD@{54}: rebase (finish): returning to refs/heads/develop
+[33m04bea1e[m HEAD@{55}: rebase (start): checkout origin
+[33m25ea6a9[m HEAD@{56}: rebase (finish): returning to refs/heads/feature_connexion
+[33m25ea6a9[m HEAD@{57}: rebase (pick): cleanup unused components
+[33m064a2de[m HEAD@{58}: rebase (continue): navbar + footer + installed material icons, ok
+[33m0296713[m HEAD@{59}: rebase (pick): essai de push
+[33m3d0c3cf[m HEAD@{60}: rebase (continue): commit déco, ok
+[33m0eb6037[m HEAD@{61}: rebase (continue): token enregistré par navigateur, prochain pb, régler les pb de cors,
+[33mfdc4332[m HEAD@{62}: rebase (pick): extracted filter button
+[33m0123c9a[m HEAD@{63}: rebase (pick): basics done
+[33m9f3716b[m HEAD@{64}: rebase (continue): starting filters
+[33mbb5e8ae[m HEAD@{65}: rebase (pick): setup basic list
+[33mb6ba0a7[m HEAD@{66}: rebase (start): checkout develop
+[33m68aa0bb[m HEAD@{67}: rebase (abort): returning to refs/heads/feature_connexion
+[33mb1d567b[m HEAD@{68}: rebase (pick): setup basic list
+[33mb6ba0a7[m HEAD@{69}: rebase (start): checkout develop
+[33m68aa0bb[m HEAD@{70}: commit (merge): énième tentative de merge pour push
+[33me916ab6[m[33m ([m[1;31morigin/feature_connexion[m[33m)[m HEAD@{71}: commit: essai de push
+[33m875d68e[m HEAD@{72}: commit: commit déco
+[33mbd8bfa7[m HEAD@{73}: commit: token enregistré par navigateur, prochain pb, régler les pb de cors
+[33m285c7e4[m HEAD@{74}: checkout: moving from develop to feature_connexion
+[33m04bea1e[m HEAD@{75}: rebase (finish): returning to refs/heads/develop
+[33m04bea1e[m HEAD@{76}: rebase (start): checkout origin
+[33m285c7e4[m HEAD@{77}: commit (merge): essai
+[33mb6ba0a7[m HEAD@{78}: checkout: moving from develop to feature_connexion
+[33m04bea1e[m HEAD@{79}: rebase (finish): returning to refs/heads/develop
+[33m04bea1e[m HEAD@{80}: rebase (start): checkout origin
+[33mb6ba0a7[m HEAD@{81}: commit: maj essais token
+[33m1e814ba[m HEAD@{82}: commit: changements redirections...
+[33m32e215c[m HEAD@{83}: commit: sign in donne un token en console, débug de register
+[33m3e48653[m HEAD@{84}: commit: list users et formulaire sign in
+[33m04bea1e[m HEAD@{85}: checkout: moving from develop to feature_connexion
+[33m04bea1e[m HEAD@{86}: checkout: moving from main to develop
+[33m33e7d28[m[33m ([m[1;32mmain[m[33m)[m HEAD@{87}: clone: from https://github.com/flemerrer/ticket_user
