@@ -4,18 +4,22 @@ import {Button, Grid, Typography} from '@mui/material';
 import axios from "axios";
 import {FilterButton} from "./FilterButton";
 import {DatePicker} from "./DatePicker";
-
+import {useLocation} from 'react-router-dom'
 import Event from "./Event";
-import Box from "@mui/material/Box";
 
 export default function EventList() {
 
+    // let location = useLocation();
+    //
+    // React.useEffect(() => {
+    //     console.log(location.pathname);
+    // }, [location]);
+
     const queryParameters = new URLSearchParams(window.location.search)
-    const search = queryParameters.get("search")
+    const search = queryParameters.get("search");
 
     const [events, setEvents] = useState([]);
-    // let {search} = useParams();
-
+    const [cityFilter, setCityFilter] = useState('');
     const [start, setStart] = useState(0);
 
     const items = [
@@ -66,39 +70,40 @@ export default function EventList() {
         }
     }, []);
 
-    const fetchParam = (param) => {
-        fetch('http://localhost:8080/api/events/list?' + param)
-            .then(response => response.json())
-            .then(elements => {
-                console.table(elements);
-                setEvents(elements);
-            });
-    }
-
-    let i = 0;
+    useEffect(() => {
+        if (cityFilter !== '') {
+            axios.get(`http://localhost:8080/api/events/list?city=${cityFilter}`)
+                .then(function (response) {
+                    setEvents(response.data)
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+        }
+    }, [cityFilter]);
 
     return (
         <>
-            <Typography variant='h3' sx={{mt:8}}>Parcourir les événements</Typography>
+            <Typography variant='h3' sx={{mt: 8}}>Parcourir les événements</Typography>
             <Grid container sx={{
                 display: "flex",
                 flexDirection: "column",
                 alignContent: "center"
             }}>
-                <Box sx={{
+                <Grid item key={'filterButtons'} sx={{
                     display: "flex",
                     flexDirection: "row",
                     alignSelf: "center",
-                    m:3
+                    m: 3,
                 }}>
-                    <FilterButton/>
+                    <FilterButton props={{cityFilter, setCityFilter}}/>
                     <DatePicker/>
                     {/*<FilterByCity/>*/}
                     {/*<FilterByDate/>*/}
-                </Box>
-                <Grid item xs={12} sm={8} md={6} key={'eventList'} sx={{width:'100%'}}>
+                </Grid>
+                <Grid item xs={12} sm={8} md={6} key={'eventList'} sx={{width: '100%'}}>
 
-                    {events.slice(0, start + 5).map(event => (<Event event={event}/>))}
+                    {events.slice(0, start + 5).map(event => (<Event event={event} key={event.id}/>))}
 
                     {/*{items.map(event => (<Event event={event} key={event.name}/>))}*/}
 
@@ -111,12 +116,11 @@ export default function EventList() {
     function LoadMore() {
         if (start <= events.length) {
             return (
-                <Button onClick={() => setStart(start + 5)} sx={{p:5}}>Montrer plus</Button>
+                <Button onClick={() => setStart(start + 5)} sx={{p: 5}}>Montrer plus</Button>
             )
 
         } else {
             return <></>;
         }
     }
-
 }

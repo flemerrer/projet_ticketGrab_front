@@ -4,16 +4,41 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import {useEffect, useState} from "react";
+import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
-export function FilterButton() {
+export function FilterButton(cityFilter, setCityFilter) {
+
+    const navigate = useNavigate();
+
+    const [citiesList, setCitiesList] = useState([]);
+
+    useEffect(() => {
+        axios.get(`http://localhost:8080/api/events/cities`)
+            .then(function (response) {
+                setCitiesList(response.data)
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+    }, []);
+
     const [anchorEl, setAnchorEl] = React.useState(null);
+
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
+
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    function goTo(props) {
+        navigate(`/events?city=${props}`)
+        setCityFilter(props);
+    }
 
 /*
     const click = (param) => {
@@ -87,12 +112,9 @@ export function FilterButton() {
                 open={open}
                 onClose={handleClose}
             >
-                <MenuItem onClick={handleClose} disableRipple>
-                    Entry 1
-                </MenuItem>
-                <MenuItem onClick={handleClose} disableRipple>
-                    Entry 2
-                </MenuItem>
+                {citiesList.map(city => (
+                    <MenuItem onClick={() => goTo(city.name)} disableRipple key={city.id}>{city.name}</MenuItem>
+                ))}
             </StyledMenu>
         </div>
     );
