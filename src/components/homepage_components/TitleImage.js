@@ -41,12 +41,13 @@ export default function TitleImage(){
                     }}
                 />
                 <Grid container>
-                    <Grid item md={12} sx={{
+                    <Grid item md={12} key={'titleContainer'} sx={{
                         display: 'flex',
                         alignContent: 'center',
                         justifyContent: 'center'
                     }}>
                         <Box
+                            key={'titleImage'}
                             sx={{
                                 position: 'relative',
                                 p: {xs: 4, sm:8, md: 12, lg: 16, xl:20},

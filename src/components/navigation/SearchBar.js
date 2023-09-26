@@ -1,8 +1,36 @@
-import {InputBase} from "@mui/material";
+import {Input, InputBase} from "@mui/material";
 import {alpha, styled} from "@mui/material/styles";
 import SearchIcon from '@mui/icons-material/Search';
+import {useNavigate} from "react-router-dom";
+import {useEffect, useState} from "react";
 
 export default function Searchbar(){
+
+    const navigate = useNavigate();
+
+    const [query2, setQuery2] = useState('');
+
+    useEffect(() => {
+        const listener = event => {
+            if (query2 !== ''){
+                // console.log('this');
+                if (event.code === "Enter" || event.code === "NumpadEnter") {
+                    navigate(`/events?search=${query2}`)
+                    setQuery2('');
+                }
+            }
+        };
+        document.addEventListener("keydown", listener);
+        return () => {
+            document.removeEventListener("keydown", listener);
+        };
+    }, []);
+
+    function handleChange(event) {
+        // event.preventDefault();
+        console.log(event.target.value);
+        // setQuery2(event.target.value);
+    }
 
     const Search = styled('div')(({ theme }) => ({
         position: 'relative',
@@ -37,7 +65,6 @@ export default function Searchbar(){
             padding: theme.spacing(1, 1, 1, 0),
             // vertical padding + font size from searchIcon
             paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-            transition: theme.transitions.create('width'),
         },
     }));
 
@@ -49,10 +76,11 @@ export default function Searchbar(){
                 </SearchIconWrapper>
                 <StyledInputBase
                     placeholder="Chercher un événement..."
-                    inputProps={{ 'aria-label': 'search' }}
+                    // inputProps={{ 'aria-label': 'search' }}
+                    value={query2}
+                    onChange={handleChange}
                 />
             </Search>
         </>
     )
 }
-

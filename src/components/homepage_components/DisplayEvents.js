@@ -1,10 +1,8 @@
 import {
-    Card,
-    CardContent,
-    CardMedia,
+
     Typography,
     Grid,
-    Button, Paper, ImageListItemBar, ImageListItem, ImageList, Box,
+   Paper,
 } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -32,30 +30,31 @@ export default function DisplayEvents() {
 
     return (
         <>
-            <Box sx={{mt:5}}>
-                <Typography variant='h3'>Evenements à la une</Typography>
-                <br/>
-                <Carousel
-                    sx={{
-                        width: '100%',
-                        height: '100%'
-                    }}
-                    // next={(now: any, previous:any) => console.log(`Next User Callback: Now displaying child ${now}. Previously displayed child ${previous}`)}
-                    // prev={(now, previous) => console.log(`Prev User Callback: Now displaying child ${now}. Previously displayed child ${previous}`)}
-                    // onChange={(now, previous) => console.log(`OnChange User Callback: Now displaying child ${now}. Previously displayed child ${previous}`)}
+            <Typography variant='h3' sx={{m:8}} key={1}>Evenements à la une</Typography>
+            <Grid container sx={{
+                display:"flex",
+                flexDirection:"column",
+                alignContent:"center"
+            }}>
+                <Grid item xs={12} sm={8} md={6} key={'Carousel'} sx={{width:'100%'}}>
+                    <Carousel
+                            // next={(now: any, previous:any) => console.log(`Next User Callback: Now displaying child ${now}. Previously displayed child ${previous}`)}
+                            // prev={(now, previous) => console.log(`Prev User Callback: Now displaying child ${now}. Previously displayed child ${previous}`)}
+                            // onChange={(now, previous) => console.log(`OnChange User Callback: Now displaying child ${now}. Previously displayed child ${previous}`)}
 
-                    // navButtonsProps={{style: {backgroundColor: 'cornflowerblue', borderRadius: 0}}}
-                    // navButtonsWrapperProps={{style: {bottom: '0', top: 'unset', }}}
-                    // indicatorContainerProps={{style: {margin: "20px"}}}
-                    NextIcon={<ArrowForwardIosIcon/>}
-                    PrevIcon={<ArrowBackIosIcon/>}
-                    navButtonsAlwaysVisible
-                >
-                    {
-                        items.map( (item, i) => <Item key={i} item={item} />)
-                    }
-                </Carousel>
-            </Box>
+                            // navButtonsProps={{style: {backgroundColor: 'cornflowerblue', borderRadius: 0}}}
+                            // navButtonsWrapperProps={{style: {bottom: '0', top: 'unset', }}}
+                            // indicatorContainerProps={{style: {margin: "20px"}}}
+                            NextIcon={<ArrowForwardIosIcon/>}
+                            PrevIcon={<ArrowBackIosIcon/>}
+                            navButtonsAlwaysVisible
+                        >
+                            {
+                                items.map( (item, i) => <Item key={i} item={item} />)
+                            }
+                        </Carousel>
+                    </Grid>
+                </Grid>
         </>
     )
 

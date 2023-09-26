@@ -1,5 +1,5 @@
 import './App.css';
-import React from "react";
+import React, {useState} from "react";
 import {Link} from "@mui/material";
 import ListUsers from "./components/ListUsers";
 import Footer from "./components/navigation/Footer";
@@ -8,11 +8,12 @@ import SignIn from "./components/SignIn";
 import UserProfile from "./components/UserProfile";
 import SignUp from "./components/SignUp";
 import {Route, Routes} from 'react-router-dom';
-import EventList from "./components/EventList";
+import EventList from "./components/EventList/EventList";
 import HomePage from "./components/Homepage";
 import OtherProfile from "./components/OtherProfile";
 
 export default function App() {
+
     return (
 
         <div className='App'>
