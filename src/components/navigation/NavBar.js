@@ -79,6 +79,7 @@ function NavBar() {
                         <Button
                             onClick={handleCloseNavMenu}
                             sx={{ my: 2, color: 'white', display: 'block' }}
+                            href={'/ticket/add'}
                         >
                             Vendre un ticket
                         </Button>
@@ -116,12 +117,15 @@ function NavBar() {
                             <MenuItem onClick={handleCloseNavMenu}>
                                 <Typography textAlign="center">Mes tickets</Typography>
                             </MenuItem>
+
                             <MenuItem onClick={handleCloseNavMenu}>
                                 <Typography textAlign="center">Mes annonces</Typography>
                             </MenuItem>
+
                             <MenuItem onClick={handleCloseNavMenu}>
                                 <Typography textAlign="center">Vendre un ticket</Typography>
                             </MenuItem>
+
                         </Menu>
                     </Box>
 
@@ -145,26 +149,29 @@ function NavBar() {
                                 horizontal: 'right',
                             }}
                             open={Boolean(anchorElUser)}
-<<<<<<< HEAD
                             onClose={handleCloseUserMenu}
                         >
                             <MenuItem onClick={handleCloseNavMenu}>
                                 <Typography textAlign="center">Voir mon profil</Typography>
-=======
                             onClose={handleCloseUserMenu}>
+                            </MenuItem>
+
                             <MenuItem onClick={() => handleCloseNavMenu('signin')}>
                                 <Typography textAlign="center">Se connecter</Typography>
->>>>>>> 38bc37214bc8a67b23c3b0a5e5727043f373ef06
                             </MenuItem>
+
                             <MenuItem onClick={() => handleCloseNavMenu('register')}>
                                 <Typography textAlign="center">Créer un Compte</Typography>
                             </MenuItem>
+
                             <MenuItem onClick={() => handleCloseNavMenu('userprofile')}>
                                 <Typography textAlign="center">Afficher vos informations personnelles</Typography>
                             </MenuItem>
+
                             <MenuItem onClick={() => handleCloseNavMenu('otherprofile')}>
                                 <Typography textAlign="center">Afficher le profil d'un autre utilisateur</Typography>
                             </MenuItem>
+
                         </Menu>
                     </Box>
                 </Toolbar>

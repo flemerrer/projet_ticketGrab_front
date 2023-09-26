@@ -28,8 +28,10 @@ export default function AddTicket() {
             inSold: data.get('isSold')
         };
 
+        console.log(newTicket);
+
         axios.post('http://localhost:8080/api/tickets/add', newTicket)
-            .then(newTicket =>console.log(newTicket))
+            .then(response =>console.log(response))
             .catch(error => console.error(error));
 
         return navigate("/ticket");
