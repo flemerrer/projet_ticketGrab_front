@@ -64,6 +64,32 @@ export default function SignIn() {
             });
     };
 
+    const compteParDefaut = (event) => {
+        event.preventDefault();
+        // const data = new FormData(event.currentTarget);
+        // console.log({
+        //     email: data.get('email'),
+        // });
+        //
+        // let loginData = {
+        //     email: data.get('email'),
+        // };
+        // localStorage.setItem('email', data.get('email'));
+
+        axios.post('http://localhost:8080/auth/nologin')
+            .then(function (response) {
+                return response.data;
+            })
+            .then(function (token) {
+                localStorage.setItem('token',token);
+                console.log(localStorage);
+                navigate("/userprofile");
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    };
+
     return (
         <ThemeProvider theme={defaultTheme}>
             <Container component="main" maxWidth="xs">
@@ -127,6 +153,16 @@ export default function SignIn() {
                                 </Link>
                             </Grid>
                         </Grid>
+                    </Box>
+                    <Box component="form" onSubmit={compteParDefaut} noValidate sx={{ mt: 1 }}>
+                        <Button
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            sx={{ mt: 3, mb: 2 }}
+                        >
+                            Connexion en visiteur
+                        </Button>
                     </Box>
                 </Box>
                 <Copyright sx={{ mt: 8, mb: 4 }} />
