@@ -47,18 +47,23 @@ export default function EventList() {
     ]
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/api/events/list?${search}`)
-            .then(function (response) {
-                // en cas de réussite de la requête
-                setEvents(response.data)
-            })
-            .catch(function (error) {
-                // en cas d’échec de la requête
-                console.log(error);
-            })
-            .finally(function () {
-                // dans tous les cas
-            });
+        if (search !== null) {
+            axios.get(`http://localhost:8080/api/events/list?search=${search}`)
+                .then(function (response) {
+                    setEvents(response.data)
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+        } else {
+            axios.get(`http://localhost:8080/api/events/list`)
+                .then(function (response) {
+                    setEvents(response.data)
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+        }
     }, []);
 
     const fetchParam = (param) => {
