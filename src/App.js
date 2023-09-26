@@ -5,7 +5,7 @@ import Tickets from "./components/Tickets";
 import AddTicket from "./components/AddTicket";
 import EventList from "./components/EventList";
 import Footer from "./components/Footer";
-import NavBar from "./components/NavBar";
+import NavBa
 import {Link} from "@mui/material";
 import MesTickets from "./components/MesTickets";
 import Signout from "./components/Signout";
