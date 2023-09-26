@@ -13,6 +13,9 @@ export default function Event({event}) {
                    mb: 2,
                    position: 'relative',
                    backgroundColor: '#f2f2f2',
+                   '&:hover': {
+                       backgroundColor: 'white',
+                   },
                    justifyContent: 'center'
                }}>
             <CardContent>

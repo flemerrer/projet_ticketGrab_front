@@ -9,7 +9,6 @@ export default function SearchBlock() {
 
     const navigate = useNavigate();
 
-
     const [query, setQuery] = useState('');
 
     useEffect(() => {
@@ -25,7 +24,7 @@ export default function SearchBlock() {
         return () => {
             document.removeEventListener("keydown", listener);
         };
-    }, []);
+    }, [query]);
 
     function handleChange(event) {
         console.log(event.target.value);

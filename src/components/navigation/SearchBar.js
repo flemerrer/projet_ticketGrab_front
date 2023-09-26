@@ -3,6 +3,8 @@ import {alpha, styled} from "@mui/material/styles";
 import SearchIcon from '@mui/icons-material/Search';
 import {useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
+import TextField from "@mui/material/TextField";
+import Box from "@mui/material/Box";
 
 export default function Searchbar(){
 
@@ -24,63 +26,42 @@ export default function Searchbar(){
         return () => {
             document.removeEventListener("keydown", listener);
         };
-    }, []);
+    }, [query2]);
 
     function handleChange(event) {
-        // event.preventDefault();
+        event.preventDefault();
         console.log(event.target.value);
-        // setQuery2(event.target.value);
+        setQuery2(event.target.value);
     }
-
-    const Search = styled('div')(({ theme }) => ({
-        position: 'relative',
-        display: { xs: 'flex', md: 'flex' },
-        flexGrow: 1,
-        borderRadius: theme.shape.borderRadius,
-        backgroundColor: alpha(theme.palette.common.white, 0.15),
-        '&:hover': {
-            backgroundColor: alpha(theme.palette.common.white, 0.25),
-        },
-        marginLeft: 0,
-        width: '100%',
-        [theme.breakpoints.up('sm')]: {
-            marginLeft: theme.spacing(1),
-            width: 'auto',
-        },
-    }));
-
-    const SearchIconWrapper = styled('div')(({ theme }) => ({
-        padding: theme.spacing(0, 2),
-        height: '100%',
-        position: 'absolute',
-        pointerEvents: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-    }));
-
-    const StyledInputBase = styled(InputBase)(({ theme }) => ({
-        color: 'inherit',
-        '& .MuiInputBase-input': {
-            padding: theme.spacing(1, 1, 1, 0),
-            // vertical padding + font size from searchIcon
-            paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-        },
-    }));
 
     return(
         <>
-            <Search>
-                <SearchIconWrapper>
-                    <SearchIcon />
-                </SearchIconWrapper>
-                <StyledInputBase
-                    placeholder="Chercher un événement..."
-                    // inputProps={{ 'aria-label': 'search' }}
-                    value={query2}
-                    onChange={handleChange}
+            <Box sx={{
+                display: { xs: 'flex', md: 'flex' },
+                flexDirection: 'row',
+                alignItems: 'center',
+                position: 'relative',
+                flexGrow: 1,
+                borderRadius: '500px',
+                '&:hover': {
+                    backgroundColor:'white',
+                },
+                '&:focus': {
+                    backgroundColor:'white',
+                },
+                marginLeft: 0,
+            }}>
+                <SearchIcon sx={{pl:2, pr:2}} />
+                <TextField id="standard-basic"
+                           variant="standard"
+                           placeholder="Chercher un événement..."
+                           value={query2}
+                           onChange={handleChange}
+                           InputProps={{
+                               disableUnderline: true,
+                           }}
                 />
-            </Search>
+            </Box>
         </>
     )
 }

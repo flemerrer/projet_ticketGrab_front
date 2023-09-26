@@ -10,6 +10,9 @@ import Box from "@mui/material/Box";
 
 export default function EventList() {
 
+    const queryParameters = new URLSearchParams(window.location.search)
+    const search = queryParameters.get("search")
+
     const [events, setEvents] = useState([]);
     // let {search} = useParams();
 
@@ -44,7 +47,7 @@ export default function EventList() {
     ]
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/events/list')
+        axios.get(`http://localhost:8080/api/events/list?${search}`)
             .then(function (response) {
                 // en cas de réussite de la requête
                 setEvents(response.data)
@@ -90,9 +93,9 @@ export default function EventList() {
                 </Box>
                 <Grid item xs={12} sm={8} md={6} key={'eventList'} sx={{width:'100%'}}>
 
-                    {items.map(event => (<Event event={event} key={event.name}/>))}
-
                     {events.slice(0, start + 5).map(event => (<Event event={event}/>))}
+
+                    {/*{items.map(event => (<Event event={event} key={event.name}/>))}*/}
 
                 </Grid>
                 <LoadMore/>
