@@ -166,6 +166,9 @@ function NavBar() {
                             <MenuItem onClick={() => handleCloseUserMenu('otherprofile')}>
                                 <Typography textAlign="center">Chercher un utilisateur</Typography>
                             </MenuItem>
+                            <MenuItem onClick={() => handleCloseUserMenu('signout')}>
+                                <Typography textAlign="center">Déconnexion</Typography>
+                            </MenuItem>
                         </Menu>
                     </Box>
                 </Toolbar>

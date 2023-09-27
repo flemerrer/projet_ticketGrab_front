@@ -5,6 +5,7 @@ import ListUsers from "./components/ListUsers";
 import Footer from "./components/navigation/Footer";
 import NavBar from "./components/navigation/NavBar";
 import SignIn from "./components/SignIn";
+import Signout from "./components/Signout";
 import UserProfile from "./components/UserProfile";
 import SignUp from "./components/SignUp";
 import {Route, Routes} from 'react-router-dom';
@@ -28,6 +29,7 @@ export default function App() {
                     <Route path='listusers' element={<ListUsers/>}/>
                     <Route path='signin' element={<SignIn/>}/>
                     <Route path='register' element={<SignUp/>}/>
+                    <Route path='signout' element={<Signout/>}/>
                     <Route path='userprofile' element={<UserProfile/>}/>
                     <Route path='otherprofile' element={<OtherProfile/>}/>
                     <Route path='basket' element={<Basket/>}/>

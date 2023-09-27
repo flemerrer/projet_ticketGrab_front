@@ -21,34 +21,48 @@ export default function Basket() {
 
     const [basket, setBasket] = useState([]);
 
-    // useEffect(() => {
-    //     fetch('http://localhost:8080/api/baskets/${basket.id}', {
-    //         headers:{
-    //             'Content-Type': 'application/json',
-    //             Authorization: `Bearer ${localStorage.getItem('token')}`,
-    //         },
-    //     })
-    //         // .then(res => console.table(res))
-    //         .then(res => res.json())
-    //         // .then(res => console.table(res))
-    //         .then(basket=>
-    //             setBasket(basket));
-    //     // console.table(users);
-    // }, []);
+    useEffect(() => {
+        let email = localStorage.getItem('email');
+        //si compte admin existe utiliser celui-ci?
+        if (email == null){
+            email = "z";
+        }
+        console.log(email);
+        fetch(`http://localhost:8080/api/baskets/basket/${email}`, {
+            method: 'GET',
+            headers:{
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+            },
+        })
+            .then(res => res.json())
+            .then(basket=>
+                setBasket(basket))
+            .catch(error => {
+            console.error(error);
+            // Handle errors here
+        })
+        console.log(basket);
+    }, []);
     const createBasket = (event) => {
         event.preventDefault();
        let email = localStorage.getItem('email');
 
+       //si compte admin existe utiliser celui-ci?
        if (email == null){
            email = "z";
        }
        console.log(email);
-        axios.post('http://localhost:8080/api/baskets/add/${email}')
+        axios.post(`http://localhost:8080/api/baskets/add/${email}`)
             // .then(function (response) {
             //     return response.data;
             // })
-            .then(basket  => console.log(basket))
+            .then(basket  => setBasket(basket))
+            .then(function (basket) {
+                localStorage.setItem('basket',basket);
+                console.log(localStorage);})
             .catch(error => console.error(error));
+
     };
 
     return (
@@ -62,7 +76,7 @@ export default function Basket() {
                                         Panier {basket.id}
                                     </Typography>
                                     <Typography variant="body4" color="text.secondary">
-                                    Tiquet en cours d'achat : {basket.tickets}
+                                    Tickets en cours d'achat : {basket.tickets}
                                     </Typography>
                                 </CardContent>
                             </Card>
