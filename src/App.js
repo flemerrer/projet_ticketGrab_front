@@ -11,6 +11,7 @@ import {Route, Routes} from 'react-router-dom';
 import EventList from "./components/EventList/EventList";
 import HomePage from "./components/Homepage";
 import OtherProfile from "./components/OtherProfile";
+import Basket from "./components/Basket";
 
 export default function App() {
 
@@ -29,6 +30,7 @@ export default function App() {
                     <Route path='register' element={<SignUp/>}/>
                     <Route path='userprofile' element={<UserProfile/>}/>
                     <Route path='otherprofile' element={<OtherProfile/>}/>
+                    <Route path='basket' element={<Basket/>}/>
                 </Route>
                 <Route path='/*' element={<NoMatch/>}/>
             </Routes>
