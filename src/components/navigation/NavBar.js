@@ -79,7 +79,11 @@ export default function NavBar() {
                             Mes annonces
                         </Button>
 
-                        <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
+                        <Button
+                            onClick={handleCloseNavMenu}
+                            sx={{ my: 2, color: 'white', display: 'block' }}
+                            href={'/addticket'}
+                        >
                             Vendre un ticket
                         </Button>
 
