@@ -4,48 +4,16 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import {useEffect, useState} from "react";
-import axios from "axios";
 import {useNavigate} from "react-router-dom";
 
-export function FilterButton(cityFilter, setCityFilter) {
-
-    const navigate = useNavigate();
-
-    const [citiesList, setCitiesList] = useState([]);
-
-    useEffect(() => {
-        axios.get(`http://localhost:8080/api/events/cities`)
-            .then(function (response) {
-                setCitiesList(response.data)
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
-    }, []);
+export function FilterButton({changeFilter, citiesList}) {
 
     const [anchorEl, setAnchorEl] = React.useState(null);
-
     const open = Boolean(anchorEl);
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
+    const handleClick = (event) => {setAnchorEl(event.currentTarget);};
+    const handleClose = () => {setAnchorEl(null);};
 
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-
-    function goTo(props) {
-        navigate(`/events?city=${props}`)
-        setCityFilter(props);
-    }
-
-/*
-    const click = (param) => {
-        handleClose;
-        fetchParam(param);
-    }
-    */
+    const closeMenu = (city) => {handleClose(); changeFilter(city)};
 
     const StyledMenu = styled((props) => (
         <Menu
@@ -90,6 +58,7 @@ export function FilterButton(cityFilter, setCityFilter) {
 
     return (
         <div>
+
             <Button
                 id="demo-customized-button"
                 aria-controls={open ? 'demo-customized-menu' : undefined}
@@ -103,6 +72,7 @@ export function FilterButton(cityFilter, setCityFilter) {
             >
                 Ville
             </Button>
+
             <StyledMenu
                 id="demo-customized-menu"
                 MenuListProps={{
@@ -112,10 +82,13 @@ export function FilterButton(cityFilter, setCityFilter) {
                 open={open}
                 onClose={handleClose}
             >
+
                 {citiesList.map(city => (
-                    <MenuItem onClick={() => goTo(city.name)} disableRipple key={city.id}>{city.name}</MenuItem>
+                    <MenuItem onClick={() => closeMenu(city.name)} disableRipple key={city.id}>{city.name}</MenuItem>
                 ))}
+
             </StyledMenu>
+
         </div>
     );
 }

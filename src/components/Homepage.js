@@ -10,9 +10,13 @@ export default function HomePage() {
     return (
         <>
             <TitleImage />
+
             <DisplayEvents />
+
             <SearchBlock/>
+
             <DisplayTickets />
+
             <AboutBlock />
         </>
     )

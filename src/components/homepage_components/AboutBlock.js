@@ -6,30 +6,19 @@ export default function AboutBlock() {
         <>
             <Paper
                 sx={{
-                    position: 'relative'
-                    ,
-                    backgroundColor: 'grey.800'
-                    ,
-                    color: '#fff'
-                    ,
-                    backgroundSize: 'cover'
-                    ,
-                    backgroundRepeat: 'no-repeat'
-                    ,
-                    backgroundPosition: 'center'
-                    ,
-                    backgroundImage: `url(platines.jpg)`
-                    ,
+                    position: 'relative',
+                    backgroundColor: 'grey.800',
+                    color: '#fff',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center',
+                    backgroundImage: `url(platines.jpg)`,
                     mt:8
-                }
-
-                }
+                }}
             >
-                {/* Increase the priority of the hero background image */
-                }
-                {
-                    <img style={{display: 'none'}} src="background.jpg" alt="Change your WE plans in a few clics"/>
-                }
+                {/* Increase the priority of the hero background image */}
+                {<img style={{display: 'none'}} src="background.jpg" alt="Change your WE plans in a few clics"/>}
+
                 <Box
                     sx={{
                         position: 'absolute',
@@ -40,12 +29,15 @@ export default function AboutBlock() {
                         backgroundColor: 'rgba(0,0,0,.3)',
                     }}
                 />
+
                 <Grid container>
+
                     <Grid item md={12} key={'aboutContainer'} sx={{
                         display: 'flex',
                         alignContent: 'center',
                         justifyContent: 'center'
                     }}>
+
                         <Box key={'aboutImage'}
                             sx={{
                                 position: 'relative',
@@ -55,9 +47,13 @@ export default function AboutBlock() {
                             <Typography component="h2" variant="h3" color="inherit" gutterBottom>
                                 Ticket Grab : revente de tickets sécurisée
                             </Typography>
+
                         </Box>
+
                     </Grid>
+
                 </Grid>
+
             </Paper>
         </>
     )

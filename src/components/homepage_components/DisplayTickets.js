@@ -25,6 +25,7 @@ export default function DisplayTickets() {
     return (
         <>
             <Typography sx={{m:8}} key={'ticketTitle'} variant='h3'>Tickets pour ce WE</Typography>
+
             <Grid container spacing={{}}
                   sx={{
                       listStyleType: 'none',
@@ -32,11 +33,13 @@ export default function DisplayTickets() {
                       flexDirection:"column",
                       alignContent:"center"
                   }}>
+
                 {items.map(event => (
-                    <Grid item xs={12} sm={8} md={6} key={event.id} sx={{width:'100%'}}>
+                    <Grid item xs={12} sm={6} md={4} key={event.id} sx={{width:'100%'}}>
                         <Event event={event} key={event.name}/>
                     </Grid>
                 ))}
+
             </Grid>
         </>
     )

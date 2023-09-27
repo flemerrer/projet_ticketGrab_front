@@ -64,7 +64,7 @@ export function DatePicker() {
     }));
 
     return (
-        <div>
+        <>
             <Button
                 id="demo-customized-button"
                 aria-controls={open ? 'demo-customized-menu' : undefined}
@@ -78,6 +78,7 @@ export function DatePicker() {
             >
                 Date
             </Button>
+
             <StyledMenu
                 id="demo-customized-menu"
                 MenuListProps={{
@@ -87,10 +88,9 @@ export function DatePicker() {
                 open={open}
                 onClose={handleClose}
             >
-                <MenuItem onClick={handleClose} disableRipple>
-                    Date Picker
-                </MenuItem>
+                <MenuItem onClick={handleClose} disableRipple>Date Picker</MenuItem>
+
             </StyledMenu>
-        </div>
+        </>
     );
 }

@@ -15,9 +15,7 @@ import PublishedWithChangesOutlinedIcon from '@mui/icons-material/PublishedWithC
 import Searchbar from "./SearchBar";
 import {useNavigate} from "react-router-dom";
 
-// const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-
-function NavBar() {
+export default function NavBar() {
     const navigate = useNavigate();
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -41,7 +39,9 @@ function NavBar() {
 
     return (
         <AppBar position="static">
+
             <Container maxWidth="xl">
+
                 <Toolbar disableGutters>
 
                     <PublishedWithChangesOutlinedIcon onClick={() => navigate('')} sx={{ display: { xs: 'flex', md: 'flex' }, mr: 1 }} />
@@ -70,29 +70,25 @@ function NavBar() {
                     {/*Nav menu*/}
 
                     <Box sx={{ml:2, display: { xs: 'none', lg: 'flex' }, justifyContent: 'flex-end'}}>
-                        <Button
-                            onClick={handleCloseNavMenu}
-                            sx={{ my: 2, color: 'white', display: 'block' }}
-                        >
+
+                        <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
                             Mes tickets
                         </Button>
-                        <Button
-                            onClick={handleCloseNavMenu}
-                            sx={{ my: 2, color: 'white', display: 'block' }}
-                        >
+
+                        <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
                             Mes annonces
                         </Button>
-                        <Button
-                            onClick={handleCloseNavMenu}
-                            sx={{ my: 2, color: 'white', display: 'block' }}
-                        >
+
+                        <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
                             Vendre un ticket
                         </Button>
+
                     </Box>
 
                     {/*Boxed Menu*/}
 
                     <Box sx={{display: { xs: 'flex', lg: 'none' }}}>
+
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -101,8 +97,11 @@ function NavBar() {
                             onClick={handleOpenNavMenu}
                             color="inherit"
                         >
+
                             <MenuIcon />
+
                         </IconButton>
+
                         <Menu
                             id="menu-appbar"
                             anchorEl={anchorElNav}
@@ -121,24 +120,32 @@ function NavBar() {
                                 display: { xs: 'block', lg: 'none' },
                             }}
                         >
+
                             <MenuItem onClick={handleCloseNavMenu}>
                                 <Typography textAlign="center">Mes tickets</Typography>
                             </MenuItem>
+
                             <MenuItem onClick={handleCloseNavMenu}>
                                 <Typography textAlign="center">Mes annonces</Typography>
                             </MenuItem>
+
                             <MenuItem onClick={handleCloseNavMenu}>
                                 <Typography textAlign="center">Vendre un ticket</Typography>
                             </MenuItem>
+
                         </Menu>
                     </Box>
 
                     <Box sx={{ flexGrow: 0, ml: 2 }}>
+
                         <Tooltip title="Open settings">
+
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                 <Avatar alt="Sylvain" src="./Sylvain.jpg" />
                             </IconButton>
+
                         </Tooltip>
+
                         <Menu
                             sx={{ mt: '45px' }}
                             id="menu-appbar"
@@ -154,23 +161,31 @@ function NavBar() {
                             }}
                             open={Boolean(anchorElUser)}
                             onClose={handleCloseUserMenu}>
+
                             <MenuItem onClick={() => handleCloseUserMenu('signin')}>
                                 <Typography textAlign="center">Se connecter</Typography>
                             </MenuItem>
+
                             <MenuItem onClick={() => handleCloseUserMenu('register')}>
                                 <Typography textAlign="center">Créer un Compte</Typography>
                             </MenuItem>
+
                             <MenuItem onClick={() => handleCloseUserMenu('userprofile')}>
                                 <Typography textAlign="center">Mon profil</Typography>
                             </MenuItem>
+
                             <MenuItem onClick={() => handleCloseUserMenu('otherprofile')}>
                                 <Typography textAlign="center">Chercher un utilisateur</Typography>
                             </MenuItem>
+
                         </Menu>
+
                     </Box>
+
                 </Toolbar>
+
             </Container>
+
         </AppBar>
     );
 }
-export default NavBar;
