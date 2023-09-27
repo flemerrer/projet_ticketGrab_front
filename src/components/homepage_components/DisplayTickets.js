@@ -1,7 +1,6 @@
-import {Box, Card, CardContent, Grid, Paper, Typography} from "@mui/material";
+import {Grid, Typography} from "@mui/material";
 import * as React from "react";
-import MenuIcon from "@mui/icons-material/Menu";
-import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
+import Event from "../EventList/Event";
 
 export default function DisplayTickets() {
 
@@ -25,48 +24,21 @@ export default function DisplayTickets() {
 
     return (
         <>
-            <Box sx={{mt:8}}>
-                <Typography variant='h3'>Tickets pour ce WE</Typography>
-                <br/>
-                <Grid display="flex" flexDirection="column" alignItems="center" >
-                    <Grid display="flex" flexDirection="column" alignItems="center" xs={12} sm={12} md={6}
-                          sx={{listStyleType: 'none', width: '100%'}}>
-                        {items.map(event => (<Event event={event}/>))}
-
+            <Typography sx={{m:8}} key={'ticketTitle'} variant='h3'>Tickets pour ce WE</Typography>
+            <Grid container spacing={{}}
+                  sx={{
+                      listStyleType: 'none',
+                      display:"flex",
+                      flexDirection:"column",
+                      alignContent:"center"
+                  }}>
+                {items.map(event => (
+                    <Grid item xs={12} sm={8} md={6} key={event.id} sx={{width:'100%'}}>
+                        <Event event={event} key={event.name}/>
                     </Grid>
-                </Grid>
-            </Box>
+                ))}
+            </Grid>
         </>
     )
 
-}
-
-function Event({event}) {
-
-    return (
-        <Paper elevation={2} display="flex" flexDirection="row"
-               sx={{
-                   width: '100%',
-                   mb: 2,
-                   position: 'relative'
-        }}>
-            <CardContent>
-                <Typography sx={{fontSize: 14}} color='text.danger'>
-                    {event.type}
-                </Typography>
-                <Typography variant='h5' component='div'>
-                    {event.name}
-                </Typography>
-                <Typography sx={{mb: .5}} color='text.secondary'>
-                    {event.date}
-                </Typography>
-            </CardContent>
-            <ConfirmationNumberIcon sx={{
-                position: 'absolute',
-                top:'40%',
-                right:'10%',
-                color: '#0288d1'
-            }}/>
-        </Paper>
-    )
 }

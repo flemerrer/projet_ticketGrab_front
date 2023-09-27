@@ -41,19 +41,19 @@ export default function AboutBlock() {
                     }}
                 />
                 <Grid container>
-                    <Grid item md={12} sx={{
+                    <Grid item md={12} key={'aboutContainer'} sx={{
                         display: 'flex',
                         alignContent: 'center',
                         justifyContent: 'center'
                     }}>
-                        <Box
+                        <Box key={'aboutImage'}
                             sx={{
                                 position: 'relative',
                                 p: {xs: 4, sm:8, md: 12, lg: 16, xl:20},
                             }}
                         >
                             <Typography component="h2" variant="h3" color="inherit" gutterBottom>
-                                Not Ticketswap : la référence de la revente de ticket
+                                Ticket Grab : revente de tickets sécurisée
                             </Typography>
                         </Box>
                     </Grid>

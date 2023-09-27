@@ -76,7 +76,7 @@ export function FilterButton() {
                 endIcon={<KeyboardArrowDownIcon />}
                 sx={{m:2}}
             >
-                Options
+                Ville
             </Button>
             <StyledMenu
                 id="demo-customized-menu"
@@ -92,13 +92,6 @@ export function FilterButton() {
                 </MenuItem>
                 <MenuItem onClick={handleClose} disableRipple>
                     Entry 2
-                </MenuItem>
-                {/*<Divider sx={{ my: 0.5 }} />*/}
-                <MenuItem onClick={handleClose} disableRipple>
-                    Entry 3
-                </MenuItem>
-                <MenuItem onClick={handleClose} disableRipple>
-                    Entry 4
                 </MenuItem>
             </StyledMenu>
         </div>
