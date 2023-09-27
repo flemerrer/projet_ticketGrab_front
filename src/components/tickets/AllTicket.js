@@ -66,21 +66,27 @@ export default function AllTicket() {
 
 
 
-    // const [tickets] = useState([]);
-    //
+    //const [tickets, setTicket] = useState([]);
+
     // useEffect(() => {
-    //     axios.get('http://localhost:4000/tickets')
-    //         .then(response => response.data)
-    //         .then(tickets => setTickets(tickets))
-    // }, []);
     //
+    //     axios.get('http://localhost:8080/api/tickets/all')
+    //         .then(function (response) {
+    //             setTickets(response.data)
+    //         })
+    //         .catch(function (error){
+    //             console.log(error);
+    //         })
+    //
+    // }, []);
+
     // function deleteTicket(ticketId) {
     //     axios.delete(`http://localhost:4000/tickets/${ticketId}`)
     //         .then(response => {
     //             setTickets(tickets.filter(t => t.id !== ticketId));
     //         });
     // }
-    //
+
     return (
         <>
             <Container sx={{py: 8}} >

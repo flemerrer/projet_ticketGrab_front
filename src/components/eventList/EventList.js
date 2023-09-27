@@ -41,27 +41,32 @@ export default function EventList() {
         {
             name: 'Garorock',
             city: 'Marmande',
-            date: '23 juillet'
+            date: '23 juillet',
+            location: '12 rue belle france'
         },
         {
             name: 'Motocultor',
             city: 'Saint Nolff',
-            date: '12 aout'
+            date: '12 aout',
+            location: '142 rue des ateliers'
         },
         {
             name: 'Roi Arthur',
             city: 'Breal sous Montfort',
-            date: '28 aout'
+            date: '28 aout',
+            location: '14 rue De Gaulles'
         },
         {
             name: 'Vieilles Charrues',
             city: 'Carhaix',
-            date: '16 septembre'
+            date: '16 septembre',
+            location: '142 rue de lilas'
         },
         {
             name: 'Hellfest',
             city: 'Clisson',
-            date: '20 octobre'
+            date: '20 octobre',
+            location: '7 rue des banquets'
         }
     ]
 
