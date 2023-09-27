@@ -1,4 +1,4 @@
-import '../App.css';
+import '../../App.css';
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {
@@ -20,7 +20,7 @@ export default function ListUsers() {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:8080/opi/allusers', {
+        fetch('http://localhost:8080/api/allusers', {
             headers:{
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${localStorage.getItem('token')}`,

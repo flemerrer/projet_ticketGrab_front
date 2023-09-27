@@ -4,23 +4,16 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import {useNavigate} from "react-router-dom";
 
-export function FilterButton() {
+export function FilterButton({changeFilter, citiesList}) {
+
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
+    const handleClick = (event) => {setAnchorEl(event.currentTarget);};
+    const handleClose = () => {setAnchorEl(null);};
 
-/*
-    const click = (param) => {
-        handleClose;
-        fetchParam(param);
-    }
-    */
+    const closeMenu = (city) => {handleClose(); changeFilter(city)};
 
     const StyledMenu = styled((props) => (
         <Menu
@@ -65,6 +58,7 @@ export function FilterButton() {
 
     return (
         <div>
+
             <Button
                 id="demo-customized-button"
                 aria-controls={open ? 'demo-customized-menu' : undefined}
@@ -78,6 +72,7 @@ export function FilterButton() {
             >
                 Ville
             </Button>
+
             <StyledMenu
                 id="demo-customized-menu"
                 MenuListProps={{
@@ -87,13 +82,13 @@ export function FilterButton() {
                 open={open}
                 onClose={handleClose}
             >
-                <MenuItem onClick={handleClose} disableRipple>
-                    Entry 1
-                </MenuItem>
-                <MenuItem onClick={handleClose} disableRipple>
-                    Entry 2
-                </MenuItem>
+
+                {citiesList.map(city => (
+                    <MenuItem onClick={() => closeMenu(city.name)} disableRipple key={city.id}>{city.name}</MenuItem>
+                ))}
+
             </StyledMenu>
+
         </div>
     );
 }

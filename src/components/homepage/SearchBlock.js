@@ -38,30 +38,45 @@ export default function SearchBlock() {
     return (
         <>
             <Typography variant='h3' sx={{m: 8}}>Rechercher un événement</Typography>
+
             <Grid container sx={{
                 display: "flex",
                 flexDirection: "column",
                 alignContent: "center"
             }}>
+
                 <Grid item key={'searchBar'} sx={{width: '100%', mb: 5, justifyContent:'center'}}>
+
                     <TextField id="searchEvent"
                                label="Rechercher par nom, lieu, artiste"
                                variant="outlined"
                                value={query}
                                onChange={handleChange}
-                               sx={{width: '60%'}}
+                               sx={{width: '50%'}}
                                key={1}
                     />
+
                 </Grid>
+
                     <Box key={'searchButtons'}>
+
                         <Button variant="contained" startIcon={<FestivalIcon/>}
-                                sx={{m: 1, backgroundColor: 'info.main'}} onClick={() => goTo('events')}>Tous les
-                            événements</Button>
+                                sx={{m: 1, backgroundColor: 'info.main'}} onClick={() => goTo('events')}>
+                            Tous les événements
+                        </Button>
+
                         <Button variant="contained" startIcon={<EventIcon/>}
-                                sx={{m: 1, backgroundColor: 'warning.main'}}>Ce Week End</Button>
+                                sx={{m: 1, backgroundColor: 'warning.main'}}>
+                            Ce Week End
+                        </Button>
+
                         <Button variant="contained" startIcon={<LocationOnIcon/>}
-                                sx={{m: 1, backgroundColor: 'secondary.main'}}>Lister les lieux</Button>
+                                sx={{m: 1, backgroundColor: 'secondary.main'}}>
+                            Lister les lieux
+                        </Button>
+
                     </Box>
+
             </Grid>
         </>
     )

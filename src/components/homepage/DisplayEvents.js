@@ -31,12 +31,15 @@ export default function DisplayEvents() {
     return (
         <>
             <Typography variant='h3' sx={{m:8}} key={1}>Evenements à la une</Typography>
+
             <Grid container sx={{
                 display:"flex",
                 flexDirection:"column",
                 alignContent:"center"
             }}>
+
                 <Grid item xs={12} sm={8} md={6} key={'Carousel'} sx={{width:'100%'}}>
+
                     <Carousel
                             // next={(now: any, previous:any) => console.log(`Next User Callback: Now displaying child ${now}. Previously displayed child ${previous}`)}
                             // prev={(now, previous) => console.log(`Prev User Callback: Now displaying child ${now}. Previously displayed child ${previous}`)}
@@ -53,7 +56,9 @@ export default function DisplayEvents() {
                                 items.map( (item, i) => <Item key={i} item={item} />)
                             }
                         </Carousel>
+
                     </Grid>
+
                 </Grid>
         </>
     )
@@ -77,7 +82,9 @@ function Item({item})
             />
 
             <Typography variant='h4' sx={{pt: 2}}>{item.name}</Typography>
+
             <Typography variant='h5' sx={{pb: 2}}>{item.date}</Typography>
+
         </Paper>
 
     )

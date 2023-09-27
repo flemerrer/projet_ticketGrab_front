@@ -9,7 +9,6 @@ import Box from "@mui/material/Box";
 export default function Searchbar(){
 
     const navigate = useNavigate();
-
     const [query2, setQuery2] = useState('');
 
     useEffect(() => {
@@ -51,7 +50,9 @@ export default function Searchbar(){
                 },
                 marginLeft: 0,
             }}>
+
                 <SearchIcon sx={{pl:2, pr:2}} />
+
                 <TextField id="standard-basic"
                            variant="standard"
                            placeholder="Chercher un événement..."
@@ -61,6 +62,7 @@ export default function Searchbar(){
                                disableUnderline: true,
                            }}
                 />
+
             </Box>
         </>
     )

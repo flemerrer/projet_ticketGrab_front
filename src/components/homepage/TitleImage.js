@@ -7,29 +7,18 @@ export default function TitleImage(){
         <>
             <Paper
                 sx={{
-                    position: 'relative'
-                    ,
-                    backgroundColor: 'grey.800'
-                    ,
-                    color: '#fff'
-                    ,
-                    backgroundSize: 'cover'
-                    ,
-                    backgroundRepeat: 'no-repeat'
-                    ,
-                    backgroundPosition: 'top'
-                    ,
-                    backgroundImage: `url(party2.jpg)`
-                    ,
-                }
-
-                }
+                    position: 'relative',
+                    backgroundColor: 'grey.800',
+                    color: '#fff',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'top',
+                    backgroundImage: `url(party2.jpg)`}}
             >
-                {/* Increase the priority of the hero background image */
-                }
-                {
-                    <img style={{display: 'none'}} src="background.jpg" alt="Change your WE plans in a few clics"/>
-                }
+
+                {/* Increase the priority of the hero background image */}
+                {<img style={{display: 'none'}} src="background.jpg" alt="Change your WE plans in a few clics"/>}
+
                 <Box
                     sx={{
                         position: 'absolute',
@@ -40,12 +29,15 @@ export default function TitleImage(){
                         backgroundColor: 'rgba(0,0,0,.3)',
                     }}
                 />
+
                 <Grid container>
+
                     <Grid item md={12} key={'titleContainer'} sx={{
                         display: 'flex',
                         alignContent: 'center',
                         justifyContent: 'center'
                     }}>
+
                         <Box
                             key={'titleImage'}
                             sx={{
@@ -53,12 +45,17 @@ export default function TitleImage(){
                                 p: {xs: 4, sm:8, md: 12, lg: 16, xl:20},
                             }}
                         >
+
                             <Typography component="h1" variant="h3" color="inherit" gutterBottom>
                                 Changez vos plans du week-end en quelques clics
                             </Typography>
+
                         </Box>
+
                     </Grid>
+
                 </Grid>
+
             </Paper>
         </>
     )

@@ -1,5 +1,5 @@
 import {NavLink} from "react-router-dom";
-import Signout from "../Signout";
+import Signout from "../user/Signout";
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -9,13 +9,19 @@ import Link from '@mui/material/Link';
 function Copyright() {
     return (
         <Typography variant="body2" color="text.secondary">
+
             {'Copyright © '}
+
             <Link color="inherit" href="https://mui.com/">
                 Ticket Grab
             </Link>{' '}
+
             {new Date().getFullYear()}
+
             {'.'}
+
         </Typography>
+
     );
 }
 
@@ -34,20 +40,19 @@ export default function Footer() {
                             : theme.palette.grey[800],
                 }}
             >
+
                 <Container maxWidth="sm">
+
                     <Typography variant="body1">
                         Ticket Grab
                     </Typography>
+
                     <Copyright />
+
                 </Container>
-                {/*<div className="btn-group">*/}
-                {/*    <NavLink to="/listusers" className="btn btn-outline-dark bg-light">  Bouton Liste users  </NavLink>*/}
-                {/*    <NavLink to="/userprofile" className="btn btn-outline-dark bg-light">  Votre profil  </NavLink>*/}
-                {/*    <NavLink to="/signin" className="btn btn-outline-dark bg-light">  Se connecter  </NavLink>*/}
-                {/*    <NavLink to="/register" className="btn btn-outline-dark bg-light">  Créer un compte  </NavLink>*/}
-                {/*    <Signout/>*/}
-                {/*</div>*/}
+
             </Box>
+
         </>
     );
 }
