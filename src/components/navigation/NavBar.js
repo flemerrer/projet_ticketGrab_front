@@ -15,7 +15,7 @@ import PublishedWithChangesOutlinedIcon from '@mui/icons-material/PublishedWithC
 import Searchbar from "./SearchBar";
 import {useNavigate} from "react-router-dom";
 
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+// const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function NavBar() {
     const navigate = useNavigate();
@@ -30,13 +30,13 @@ function NavBar() {
         setAnchorElUser(event.currentTarget);
     };
 
-    const handleCloseNavMenu = (props) => {
-        setAnchorElNav(props);
-        navigate(`/${props}`)
+    const handleCloseNavMenu = () => {
+        setAnchorElNav(null);
     };
 
-    const handleCloseUserMenu = () => {
+    const handleCloseUserMenu = (props) => {
         setAnchorElUser(null);
+        navigate(`/${props}`)
     };
 
     return (
@@ -44,13 +44,13 @@ function NavBar() {
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
 
-                    <PublishedWithChangesOutlinedIcon sx={{ display: { xs: 'flex', md: 'flex' }, mr: 1 }} />
+                    <PublishedWithChangesOutlinedIcon onClick={() => navigate('')} sx={{ display: { xs: 'flex', md: 'flex' }, mr: 1 }} />
 
                     <Typography
                         variant="h6"
                         noWrap
                         component="a"
-                        onClick={() => handleCloseNavMenu('')}
+                        onClick={() => navigate('')}
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
@@ -66,6 +66,8 @@ function NavBar() {
                     </Typography>
 
                     <Searchbar />
+
+                    {/*Nav menu*/}
 
                     <Box sx={{ml:2, display: { xs: 'none', lg: 'flex' }, justifyContent: 'flex-end'}}>
                         <Button
@@ -87,6 +89,8 @@ function NavBar() {
                             Vendre un ticket
                         </Button>
                     </Box>
+
+                    {/*Boxed Menu*/}
 
                     <Box sx={{display: { xs: 'flex', lg: 'none' }}}>
                         <IconButton
@@ -114,7 +118,7 @@ function NavBar() {
                             open={Boolean(anchorElNav)}
                             onClose={handleCloseNavMenu}
                             sx={{
-                                display: { xs: 'block', md: 'none' },
+                                display: { xs: 'block', lg: 'none' },
                             }}
                         >
                             <MenuItem onClick={handleCloseNavMenu}>
@@ -150,17 +154,17 @@ function NavBar() {
                             }}
                             open={Boolean(anchorElUser)}
                             onClose={handleCloseUserMenu}>
-                            <MenuItem onClick={() => handleCloseNavMenu('signin')}>
+                            <MenuItem onClick={() => handleCloseUserMenu('signin')}>
                                 <Typography textAlign="center">Se connecter</Typography>
                             </MenuItem>
-                            <MenuItem onClick={() => handleCloseNavMenu('register')}>
+                            <MenuItem onClick={() => handleCloseUserMenu('register')}>
                                 <Typography textAlign="center">Créer un Compte</Typography>
                             </MenuItem>
-                            <MenuItem onClick={() => handleCloseNavMenu('userprofile')}>
-                                <Typography textAlign="center">Afficher vos informations personnelles</Typography>
+                            <MenuItem onClick={() => handleCloseUserMenu('userprofile')}>
+                                <Typography textAlign="center">Mon profil</Typography>
                             </MenuItem>
-                            <MenuItem onClick={() => handleCloseNavMenu('otherprofile')}>
-                                <Typography textAlign="center">Afficher le profil d'un autre utilisateur</Typography>
+                            <MenuItem onClick={() => handleCloseUserMenu('otherprofile')}>
+                                <Typography textAlign="center">Chercher un utilisateur</Typography>
                             </MenuItem>
                         </Menu>
                     </Box>

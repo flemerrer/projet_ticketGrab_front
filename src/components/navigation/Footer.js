@@ -36,7 +36,7 @@ export default function Footer() {
             >
                 <Container maxWidth="sm">
                     <Typography variant="body1">
-                        This is not Ticket Swap (but its pretty close)
+                        Ticket Grab
                     </Typography>
                     <Copyright />
                 </Container>
@@ -45,7 +45,7 @@ export default function Footer() {
                 {/*    <NavLink to="/userprofile" className="btn btn-outline-dark bg-light">  Votre profil  </NavLink>*/}
                 {/*    <NavLink to="/signin" className="btn btn-outline-dark bg-light">  Se connecter  </NavLink>*/}
                 {/*    <NavLink to="/register" className="btn btn-outline-dark bg-light">  Créer un compte  </NavLink>*/}
-                    <Signout/>
+                {/*    <Signout/>*/}
                 {/*</div>*/}
             </Box>
         </>
