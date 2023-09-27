@@ -85,7 +85,7 @@ export default function Event({event}) {
 
                 <Typography sx={{fontSize: 14}} color='text.danger'>{event.date}</Typography>
 
-                {/*<Typography variant='h5' component='div'>{event.name}</Typography>*/}
+                <Typography variant='h5' component='div'>{event.name}</Typography>
 
                 <Typography variant='h5' component='div'>{event.location}</Typography>
 

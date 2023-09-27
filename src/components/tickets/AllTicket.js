@@ -1,65 +1,59 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 import {
-    Button,
     Card,
     CardActions,
     CardContent,
     CardMedia,
-    Chip,
     Container,
     Grid, IconButton,
-    Stack,
     Typography
 } from "@mui/material";
-import axios from "axios";
-import DeleteIcon from '@mui/icons-material/Delete';
-
 
 export default function AllTicket() {
 
     const tickets = [
         {
-            "name": "BERCY ZOOM",
-            "event": "TOTO LAST SHOW",
+            "name": "place premium",
+            "event": "TOTO LAST SHOW - BERCY ZOOM",
             "img": "https://images.unsplash.com/photo-1655723122539-6f4288ed14c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
             "price": "120",
             "id": 1
         },
         {
-            "name": "CITY LIVE",
-            "event": "BONGO LIVE",
+            "name": "1 place standard",
+            "event": "CITY LIVE - BONGO LIVE",
             "img": "https://plus.unsplash.com/premium_photo-1695200708808-a0744dd42d5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
             "price": "25",
             "id": 2
         },
         {
-            "name": "NIJU",
-            "event": "YES YES TIME",
+            "name": "place fosse",
+            "event": "NIJU - YES YES TIME",
             "img": "https://images.unsplash.com/photo-1643914543607-7f755947dd70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60",
-            "price": "35",
+            "price": "75",
             "id": 3
         },
         {
-            "name": "BOOBA & K-RIXE",
-            "event": "Roisy CDG",
+            "name": "place assise",
+            "event": "BOOBA & K-RIXE",
             "img": "https://images.unsplash.com/photo-1664661167811-50344036d2db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60",
-            "price": "1200",
+            "price": "120",
             "id": 4
         },
         {
-            "name": "jhmiuhi",
-            "event": "bkijhmuhù",
+            "name": "Pass 4 jours",
+            "event": "Hellfest",
             "img": "https://images.unsplash.com/photo-1643914543607-7f755947dd70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60",
-            "price": "189498",
+            "price": "325",
             "id": 5
         },
         {
-            "name": "çot_oè_rè_tçèç",
-            "event": "çtçtçtç",
+            "name": "Pass Jour 1",
+            "event": "Garorock",
             "img": "https://images.unsplash.com/photo-1655723122539-6f4288ed14c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
-            "price": "10",
+            "price": "45",
             "id": 6
         }
     ]
