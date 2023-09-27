@@ -1,6 +1,6 @@
 import {Grid, Typography} from "@mui/material";
 import * as React from "react";
-import Event from "../EventList/Event";
+import Event from "../eventList/Event";
 
 export default function DisplayTickets() {
 
